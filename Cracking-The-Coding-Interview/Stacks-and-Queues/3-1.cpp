@@ -46,7 +46,7 @@ public:
   bool empty(int stackNum) {
     return ptop[stackNum] == -1;
   }
-}
+};
 
 int main(){
 	stack3 mystack;
