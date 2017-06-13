@@ -23,3 +23,8 @@ void ComputeTowerHanoiSteps(int num_rings_to_move, array<stack<int>, kNumPegs>& 
     ComputeTowerHanoiSteps(num_rings_to_move - 1, pegs, use_peg, to_peg, from_peg);
   }
 }
+
+// The number of moves, T(n), satisfies the following recurrence: T(n) = T(n - 1) + 1 + T(n - 1) = 1 + 2T(n - 1). The first T(n - 1) corresponds
+// to the transfer of the top n - 1 rings from P1 to P3, and the second T(n - 1) corresponds to the transfer from P3 to P2. This recurrence
+// solves to T(n) = 2^n - 1. One way to see this is to "unwrap" the recurrence: T(n) = 1 + 2 + 4 + ... + 2^kT(n - k). Printing a single
+// move takes O(1) time, so the time complexity is O(2^n).
