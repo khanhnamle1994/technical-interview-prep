@@ -3,60 +3,58 @@
 
 #include <iostream>
 #include <cstring>
+#include <map>
+#include <algorithm>
 using namespace std;
 
-void removeDuplicate1(char s[])
-{
-  int len = strlen(s);
-  if (len < 2) return;
-  int p = 0;
-  for(int i = 0; i < len; i++)
-  {
-    if(s[i] != '\0')
-    {
-      s[p++] = s[i];
-      for(int j = i + 1; j < len; j++)
-        if(s[j] == s[i])
-          s[j] = '\0';
+void removeDuplicate1(string& s) {
+  for(int i = 0; i < s.length(); i++) {
+    for(int j = i + 1; j < s.length(); j++) {
+      if(s[i] == s[j]) {
+        s[j] = '\0';
+      }
     }
   }
-  s[p] = '\0';
 }
 
 // Time complexity is O(n^2)
 
-void removeDuplicate2(char s[])
-{
-  int len = strlen(s);
-  if(len < 2) return;
-  bool c[256];
-  memset(c, 0, sizeof(c));
-  int p = 0;
-  for(int i = 0; i < len; i++)
-  {
-    if(!c[s[i]])
-    {
-      s[p++] = s[i];
-      c[s[i]] = true;
+void removeDuplicate2(string& s) {
+  map<char, int> map;
+  for(int i = 0; i < s.length(); i++) {
+    if(map[s[i]] > 1) {
+      s[i] = '\0';
+    } else {
+      map[s[i]]++;
     }
   }
-  s[p] = '\0';
 }
 
 // Time complexity is O(n)
 
+void removeDuplicate3(string& s) {
+  std::sort(s.begin(), s.end());
+  for(int i = 0; i < s.length(); i++) {
+    if(s[i] == s[i-1]) {
+      s[i] = '\0';
+    }
+  }
+}
+
+// No additional buffer
+
 int main()
 {
-  char s1[] = "abcde";
-  char s2[] = "aaabbb";
-  char s3[] = "";
-  char s4[] = "abababc";
-  char s5[] = "ccccc";
-  removeDuplicate1(s1);
-  removeDuplicate1(s2);
-  removeDuplicate1(s3);
-  removeDuplicate1(s4);
-  removeDuplicate1(s5);
+  string s1 = "abcd";
+  string s2 = "aaaa";
+  string s3 = "";
+  string s4 = "aaabbb";
+  string s5 = "abababa";
+  removeDuplicate3(s1);
+  removeDuplicate3(s2);
+  removeDuplicate3(s3);
+  removeDuplicate3(s4);
+  removeDuplicate3(s5);
   cout << s1 << " " << s2 << " " << s3 << " " << s4 << " " << s5 << endl;
   return 0;
 }
