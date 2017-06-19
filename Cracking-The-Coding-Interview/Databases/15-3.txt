@@ -1,0 +1,25 @@
+What is denormalization? Explain the pros and cons
+
+Denormalization is the process of attempting to optimize the performance of a database by adding redundant data or by grouping data. In some
+cases, denormalization helps cover up the inefficiencies inherent in relational database software. A relational normalized database imposes a
+heavy access load over physical storage of data even if it is well tuned for high performance.
+
+A normalized design will often store different but related pieces of information in separate logical tables (called relations). If these
+relations are stored physically as separate disk files, completing a database query that draws information from several relations (a join
+operation) can be slow. If many relations are joined, it may be prohibitively slow. There are two strategies for dealing with this. The
+preferred method is to keep the logical design normalized, but allow the database management system (DBMS) to store additional redundant
+information on disk to optimize query response. In this case, it is the DBMS software’s responsibility to ensure that any redundant copies are
+kept consistent. This method is often implemented in SQL as indexed views (Microsoft SQL Server) or materialized views (Oracle). A view
+represents information in a format convenient for querying, and the index ensures that queries against the view are optimized.
+
+The more usual approach is to denormalize the logical data design. With care, this can achieve a similar improvement in query response, but at
+a cost—it is now the database designer’s responsibility to ensure that the denormalized database does not become inconsistent. This is done by
+creating rules in the database called constraints, that specify how the redundant copies of information must be kept synchronized. It is the
+increase in logical complexity of the database design and the added complexity of the additional constraints that make this approach hazardous.
+Moreover, constraints introduce a trade-off, speeding up reads (SELECT in SQL) while slowing down writes (INSERT, UPDATE, and DELETE). This
+means a denormalized database under heavy write load may actually offer worse performance than its functionally equivalent normalized counterpart.
+
+A denormalized data model is not the same as a data model that has not been normalized, and denormalization should only take place after a
+satisfactory level of normalization has taken place and that any required constraints and/or rules have been created to deal with the inherent
+anomalies in the design. For example, all the relations are in third normal form and any relations with join and multivalued dependencies are
+handled appropriately.
