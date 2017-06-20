@@ -1,0 +1,29 @@
+You have a billion urls, where each is a huge page. How do you detect the duplicate documents?
+
+Observations:
+1. Pages are huge, so bringing all of them in memory is a costly affair. We need a shorter representation of pages in memory.
+A hash is an obvious choice for this.
+2. Billions of urls exist so we don’t want to compare every page with every other page (that would be O(n^2)).
+
+Based on the above two observations we can derive an algorithm which is as follows:
+1. Iterate through the pages and compute the hash table of each one.
+2. Check if the hash value is in the hash table. If it is, throw out the url as a duplicate. If it is not, then keep the url and
+insert it in into the hash table.
+
+This algorithm will provide us a list of unique urls. But wait, can this fit on one computer?
+
+How much space does each page take up in the hash table?
+- Each url is an average of 30 characters, so that’s another 30 bytes at least.
+- Each page hashes to a four byte value.
+- Each url takes up roughly 34 bytes.
+-> 34 bytes * 1 billion = 31.6 gigabytes. We’re going to have trouble holding that all in memory!
+
+What do we do?
+- We could split this up into files. We’ll have to deal with the file loading / unloading—ugh.
+- We could hash to disk. Size wouldn’t be a problem, but access time might. A hash table on disk would require a random access read
+for each check and write to store a viewed url. This could take milli-secs waiting for seek and rotational latencies. Elevator algorithms
+could eliminate random bouncing from track to track.
+- Or, we could split this up across machines, and deal with network latency. Let’s go with this solution, and assume we have n machines.
++ First, we hash the document to get a hash value v
++ v%n tells us which machine this document’s hash table can be found on.
++ v / n is the value in the hash table that is located on its machine.
