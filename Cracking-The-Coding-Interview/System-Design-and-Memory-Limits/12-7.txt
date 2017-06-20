@@ -1,0 +1,10 @@
+You have to design a database that can store terabytes of data. It should support efficient range queries. How would you do it?
+
+Construct an index for each field that requires range queries. Use a B+ tree to implement the index. A B+ tree organizes sorted data
+for efficient insertion, retrieval and removal of records. Each record is identified by a key (for this problem, it is the field value).
+Since it is a dynamic, multilevel index, finding the beginning of the range depends only on the height of the tree, which is usually
+quite small. Record references are stored in the leaves, sorted by the key. Additional records can be found by following a next block
+reference. Records will be sequentially available until the key value reaches the maximum value specified in the query.
+
+Thus, runtimes will be dominated by the number of elements in a range.  Avoid using trees that store data at interior nodes, as traversing
+the tree will be expensive since it won’t be resident in memory.
