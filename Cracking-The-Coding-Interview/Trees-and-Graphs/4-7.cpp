@@ -39,7 +39,7 @@ bool isSubTree(node* t1, node* t2) {
   if(t1 == NULL) return false;
   if(identical(t1, t2)) return true;
 
-  return (isSubTree(t1->left, t2) || isSubTree(t2->left, t2));
+  return (isSubTree(t1->left, t2) || isSubTree(t1->right, t2));
 }
 
 int main() {
