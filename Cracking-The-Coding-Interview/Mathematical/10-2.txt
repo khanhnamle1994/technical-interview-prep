@@ -1,0 +1,13 @@
+There are three ants on different vertices of a triangle. What is the probability of collision (between any two or all of them)
+if they start walking on the sides of the triangle?
+
+Similarly find the probability of collision with ‘n’ ants on an ‘n’ vertex polygon.
+
+None of the three ants will collide if all three are moving in clockwise direction, or all three are moving in a counter-clockwise
+direction. Otherwise, there will definitely be a collision.
+
+How many ways are there for the three ants to move? Each ant can move in 2 directions, so there are 2^3 ways the ant can move. There
+are only two ways which will avoid a collision, therefore the probability of collision is (2^3 – 2) / (2^3) = 6 / 8 = 3 / 4.
+
+To generalize this to an n-vertex polygon: there are still only 2 ways in which the ants can move to avoid a collision, but there are
+2^n ways they can move total. Therefore, in general, probability of collision is (2^n – 2) / 2^n = 1 – 1/2^(n-1).
