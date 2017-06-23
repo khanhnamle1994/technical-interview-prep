@@ -1,0 +1,17 @@
+How would you test an ATM in a distributed banking system?
+
+The first thing to do on this question is to clarify assumptions. Ask the following questions:
+»» Who is going to use the ATM? Answers might be “anyone,” or it might be “blind people” - or any number of other answers.
+»» What are they going to use it for? Answers might be “withdrawing money,” “transferring money,” “checking their balance,” or many
+other answers.
+»» What tools do we have to test? Do we have access to the code, or just the ATM machine?
+
+Remember: a good tester makes sure she knows what she’s testing!
+
+Here are a few test cases for how to test just the withdrawing functionality:
+»» Withdrawing money less than the account balance
+»» Withdrawing money greater than the account balance
+»» Withdrawing money equal to the account balance
+»» Withdrawing money from an ATM and from the internet at the same time
+»» Withdrawing money when the connection to the bank’s network is lost
+»» Withdrawing money from multiple ATMs simultaneously
