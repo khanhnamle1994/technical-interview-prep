@@ -1,0 +1,27 @@
+How would you test a pen?
+
+This problem is largely about understand the constraints: what exactly is the pen? You should ask a lot of questions to understand
+what exactly you are trying to test. To illustrate the technique in this problem, let us guide you through a mock-conversation.
+
+Interviewer: How would you test a pen?
+Candidate: Let me find out a bit about the pen. Who is going to use the pen?
+Interviewer: Probably children.
+Candidate: Ok, that’s interesting. What will they be doing with it? Will they be writing, drawing, or doing something else with it?
+Interviewer: Drawing.
+Candidate: Ok, great. On what? Paper? Clothing? Walls?
+Interviewer: On clothing.
+Candidate: Great. What kind of tip does the pen have? Felt? Ball point? Is it intended to wash off, or is it intended to be permanent?
+Interviewer: It’s intended to wash off.
+…. many questions later ...
+Candidate: Ok, so as I understand it, we have a pen that is being targeted at 5—10 year olds. The pen has a felt tip and comes in red,
+green, blue and black. It’s intended to wash off clothing. Is that correct?
+…
+
+The candidate now has a problem that is significantly different from what it initially seemed to be. Thus, the candidate might now want
+to test:
+1. Does the pen wash off with warm water, cold water, and luke warm water?
+2. Does the pen wash off after staying on the clothing for several weeks? What happens if you wash the clothing while the pen is still
+wet?
+3. Is the pen safe (e.g.—non-toxic) for children?
+
+and so on...
