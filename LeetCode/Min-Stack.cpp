@@ -19,7 +19,7 @@ minStack.getMin();   --> Returns -2.
 class MinStack {
 private:
   stack<int> s1;
-  stack<int> s1;
+  stack<int> s2;
 
 public:
   void push(int x) {
