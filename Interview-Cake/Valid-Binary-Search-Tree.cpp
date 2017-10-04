@@ -77,7 +77,7 @@ bool isBinarySearchTree(const BinaryTreeNode* rootNode,
 
 O(n) time and O(n) space.
 
-The time cost is easy: for valid binary search trees, we’ll have to check all nn nodes.
+The time cost is easy: for valid binary search trees, we’ll have to check all n nodes.
 
 Space is a little more complicated. Because we’re doing a depth first search, nodeAndBoundsStack will hold at most d nodes
 where d is the depth of the tree (the number of levels in the tree from the root node down to the lowest node). So we could
