@@ -11,21 +11,19 @@ showing the four bits relevant in this case). So the answer will be:
 HammingDistance(4, 14) + HammingDistance(4, 2) + HammingDistance(14, 2) = 2 + 2 + 2 = 6. */
 
 int totalHammingDistance(vector<int>& nums) {
-  int size = nums.size();
-  if(size < 2) return 0;
-  int ans = 0;
-  int *zeroOne = new int[2];
-  while(true)
+  vector<int> bit_count(32,0);
+  int res=0;
+
+  for(int i=0;i<nums.size();i++)
   {
-      int zeroCount = 0;
-      zeroOne[0] = 0;
-      zeroOne[1] = 0;
-      for(int i = 0; i < nums.size(); i++)
+      for(int j=0;j<32;j++)
       {
-          if(nums[i] == 0) zeroCount++;
-          zeroOne[nums[i] % 2]++;
-          nums[i] = nums[i] >> 1;
+          if((1<<j)&nums[i])
+              res+=(i-bit_count[j]++);
+          else
+              res+=bit_count[j];
       }
-      ans += zeroOne[0] * zeroOne[1];
-      if(zeroCount == nums.size()) return ans;
+  }
+
+  return res;
 }
