@@ -9,9 +9,25 @@ These are the best online resources that I used while preparing for technical co
 * [LeetCode](https://leetcode.com/): One of the best online resource providing a rich library of more than 300 real coding interview questions with 7 supported languages - C, C++, Java, Python, C#, JavaScript, Ruby.
 * [Interview Cake](https://www.interviewcake.com/): Another site that preps software engineering candidates for coding interview.
 
-## Time and Space Complexity
-
 ## Sorting Algorithms
+
+* **Merge Sort** is a comparison-based algorithm that focuses on how to merge together 2 pre-sorted arrays such that the resulting array is also sorted.
+* **Insertion Sort** is a comparison-based algorithm that builds a final sorted array one element at a time. It iterates through an input array and removes one element per iteration, finds the place the element belongs in the array, and then places it there.
+* **Bubble Sort** is a comparison​-based algorithm that compares each pair of elements in an array and swaps them if they are out of order until the entire array is sorted. For each element in the list, the algorithm compares every pair of elements.
+* **Quick Sort** is a comparison-based algorithm that uses divide-and-conquer to sort an array. The algorithm picks a pivot element, A[q], and then rearranges the array into two subarrays A[p … q − 1], such that all elements are less than A[q], and A[q + 1 … r], such that all elements are greater than or equal to A[q].
+* **Heap Sort** is a comparison-based algorithm that uses a binary heap data structure to sort elements. It divides its input into a sorted and an unsorted region, and it iteratively shrinks the unsorted region by extracting the largest element and moving that to the sorted region.
+* **Counting Sort** is an integer sorting algorithm that assumes that each of the n input elements in a list has a key value ranging from 0 to k, for some integer k. For each element in the list, counting sort determines the number of elements that are less than it. Counting sort can use this information to place the element directly into the correct slot of the output array.
+
+To choose a sorting algorithm for a particular problem, consider the running time, space complexity, and the expected format of the input list.
+
+|    Algorithm   | Best-case | Worst-case | Average-case | Space Complexity |   Stable?   |
+|:--------------:|:---------:|:----------:|:------------:|:----------------:|:-----------:|
+|   Merge Sort   |  O(nlogn) |  O(nlogn)  |   O(nlogn)   |       O(n)       |     Yes     |
+| Insertion Sort |    O(n)   |   O(n^2)   |    O(n^2)    |       O(1)       |     Yes     |
+|   Bubble Sort  |    O(n)   |   O(n^2)   |    O(n^2)    |       O(1)       |     Yes     |
+|    Quicksort   |  O(nlogn) |   O(n^2)   |   O(nlogn)   | logn best, n avg | Usually not |
+|    Heapsort    |  O(nlogn) |  O(nlogn)  |   O(nlogn)   |       O(1)       |      No     |
+|  Counting Sort |   O(k+n)  |   O(k+n)   |    O(k+n)    |      O(k+n)      |     Yes     |
 
 ## Tree
 
