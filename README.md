@@ -224,6 +224,29 @@ Commonly Asked Graph Interview Questions:
 
 [back to current section](#data-structures)
 
+### Hash Table
+
+Hashing is a process used to uniquely identify objects and store each object at some pre-calculated unique index called its “key.” So, the object is stored in the form of a “key-value” pair, and the collection of such items is called a “dictionary.” Each object can be searched using that key. There are different data structures based on hashing, but the most commonly used data structure is the **hash table**.
+
+Hash tables are generally implemented using arrays.
+
+The performance of hashing data structure depends upon these three factors:
+* Hash Function
+* Size of the Hash Table
+* Collision Handling Method
+
+Here’s an illustration of how the hash is mapped in an array. The index of this array is calculated through a Hash Function.
+
+![hash table](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/hash-table.png)
+
+Commonly Asked Hashing Interview Questions:
+* Find symmetric pairs in an array
+* Trace complete path of a journey
+* Find if an array is a subset of another array
+* Check if given arrays are disjoint
+
+[back to current section](#data-structures)
+
 ## Reading Code
 
 As an engineer or scientist, significant time is spent reading code others have written. Our advice for you to understand code written by others is to read a lot of code and try to figure out its goal.
