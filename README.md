@@ -101,16 +101,39 @@ Here’s an image of stack containing three data elements (1, 2 and 3), where 3 
 
 ![stack](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/stack.png)
 
-Basic operations of stack:
+Basic Operations of Stack:
 * Push — Inserts an element at the top
 * Pop — Returns the top element after removing from the stack
 * isEmpty — Returns true if the stack is empty
 * Top — Returns the top element without removing from the stack
 
-Commonly Asked Stack interview questions
+Commonly Asked Stack Interview Questions:
 * Evaluate postfix expression using a stack
 * Sort values in a stack
 * Check balanced parentheses in an expression
+
+[back to current section](#data-structures)
+
+### Queues
+
+Similar to Stack, Queue is another linear data structure that stores the element in a sequential manner. The only significant difference between Stack and Queue is that instead of using the LIFO method, Queue implements the FIFO method, which is short for First in First Out.
+
+A perfect real-life example of Queue: a line of people waiting at a ticket booth. If a new person comes, they will join the line from the end, not from the start — and the person standing at the front will be the first to get the ticket and hence leave the line.
+
+Here’s an image of Queue containing four data elements (1, 2, 3 and 4), where 1 is at the top and will be removed first:
+
+![queue](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/queue.png)
+
+Basic Operations of Queue:
+* Enqueue() — Inserts element to the end of the queue
+* Dequeue() — Removes an element from the start of the queue
+* isEmpty() — Returns true if queue is empty
+* Top() — Returns the first element of the queue
+
+Commonly Asked Queue Interview Questions:
+* Implement stack using a queue
+* Reverse first k elements of a queue
+* Generate binary numbers from 1 to n using a queue
 
 [back to current section](#data-structures)
 
