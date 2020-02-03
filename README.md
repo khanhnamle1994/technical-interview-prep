@@ -77,7 +77,7 @@ Here’s an image of a simple array of size 4, containing elements (1, 2, 3 and 
 
 ![array](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/array.png)
 
-Each data element is assigned a positive numerical value called the **Index**, which corresponds to the position of that item in the array. The majority of languages define the starting index of the array as 0.
+Each data element is assigned a positive numerical value called the ≈Index**, which corresponds to the position of that item in the array. The majority of languages define the starting index of the array as 0.
 
 Basic Operations on Arrays:
 * Insert — Inserts an element at given index
@@ -195,6 +195,32 @@ Commonly Asked Tree Interview Questions:
 * Find k-th maximum value in a binary search tree
 * Find nodes at “k” distance from the root
 * Find ancestors of a given node in a binary tree
+
+[back to current section](#data-structures)
+
+### Graphs
+
+A graph is a set of nodes that are connected to each other in the form of a network. Nodes are also called vertices. A **pair(x,y)** is called an **edge**, which indicates that vertex **x** is connected to vertex **y**. An edge may contain weight/cost, showing how much cost is required to traverse from vertex x to y.
+
+![graph](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/graph.png)
+
+Types of Graphs:
+* Undirected Graph
+* Directed Graph
+
+In a programming language, graphs can be represented using two forms:
+* Adjacency Matrix
+* Adjacency List
+
+Common Graph Traversing Algorithms:
+* Breadth First Search
+* Depth First Search
+
+Commonly Asked Graph Interview Questions:
+* Implement Breadth and Depth First Search
+* Check if a graph is a tree or not
+* Count number of edges in a graph
+* Find the shortest path between two vertices
 
 [back to current section](#data-structures)
 
