@@ -169,6 +169,35 @@ Commonly Asked Linked List Interview Questions:
 
 [back to current section](#data-structures)
 
+### Trees
+
+A tree is a hierarchical data structure consisting of vertices (nodes) and edges that connect them. Trees are similar to graphs, but the key point that differentiates a tree from the graph is that a cycle cannot exist in a tree.
+
+Trees are extensively used in Artificial Intelligence and complex algorithms to provide an efficient storage mechanism for problem-solving.
+
+Here’s an image of a simple tree, and basic terminologies used in tree data structure:
+
+![tree](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/tree.png)
+
+The following are the types of trees:
+* N-ary Tree
+* Balanced Tree
+* Binary Tree
+* Binary Search Tree
+* AVL Tree
+* Red Black Tree
+* 2–3 Tree
+
+Out of the above, Binary Tree and Binary Search Tree are the most commonly used trees.
+
+Commonly Asked Tree Interview Questions:
+* Find the height of a binary tree
+* Find k-th maximum value in a binary search tree
+* Find nodes at “k” distance from the root
+* Find ancestors of a given node in a binary tree
+
+[back to current section](#data-structures)
+
 ## Reading Code
 
 As an engineer or scientist, significant time is spent reading code others have written. Our advice for you to understand code written by others is to read a lot of code and try to figure out its goal.
