@@ -91,6 +91,29 @@ Commonly Asked Array Interview Questions:
 * Merge two sorted arrays
 * Rearrange positive and negative values in an array
 
+[back to current section](#data-structures)
+
+### Stacks
+
+A real-life example of Stack could be a pile of books placed in a vertical order. In order to get the book that’s somewhere in the middle, you will need to remove all the books placed on top of it. This is how the LIFO (Last In First Out) method works.
+
+Here’s an image of stack containing three data elements (1, 2 and 3), where 3 is at the top and will be removed first:
+
+![stack](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/stack.png)
+
+Basic operations of stack:
+* Push — Inserts an element at the top
+* Pop — Returns the top element after removing from the stack
+* isEmpty — Returns true if the stack is empty
+* Top — Returns the top element without removing from the stack
+
+Commonly Asked Stack interview questions
+* Evaluate postfix expression using a stack
+* Sort values in a stack
+* Check balanced parentheses in an expression
+
+[back to current section](#data-structures)
+
 ## Reading Code
 
 As an engineer or scientist, significant time is spent reading code others have written. Our advice for you to understand code written by others is to read a lot of code and try to figure out its goal.
