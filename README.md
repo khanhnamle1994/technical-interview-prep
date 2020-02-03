@@ -137,6 +137,38 @@ Commonly Asked Queue Interview Questions:
 
 [back to current section](#data-structures)
 
+### Linked Lists
+
+A linked list is another important linear data structure which might look similar to arrays at first but differs in memory allocation, internal structure and how basic operations of insertion and deletion are carried out.
+
+A linked list is like a chain of nodes, where each node contains information like data and a pointer to the succeeding node in the chain. There’s a head pointer, which points to the first element of the linked list, and if the list is empty then it simply points to null or nothing.
+
+Linked lists are used to implement file systems, hash tables, and adjacency lists.
+
+Here’s a visual representation of the internal structure of a linked list:
+
+![linked lists](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/linked-lists.png)
+
+Following are the types of linked lists:
+* Singly Linked List (Unidirectional)
+* Doubly Linked List (Bi-directional)
+
+Basic Operations of Linked List:
+* InsertAtEnd — Inserts given element at the end of the linked list
+* InsertAtHead — Inserts given element at the start/head of the linked list
+* Delete — Deletes given element from the linked list
+* DeleteAtHead — Deletes first element of the linked list
+* Search — Returns the given element from a linked list
+* isEmpty — Returns true if the linked list is empty
+
+Commonly Asked Linked List Interview Questions:
+* Reverse a linked list
+* Detect loop in a linked list
+* Return Nth node from the end in a linked list
+* Remove duplicates from a linked list
+
+[back to current section](#data-structures)
+
 ## Reading Code
 
 As an engineer or scientist, significant time is spent reading code others have written. Our advice for you to understand code written by others is to read a lot of code and try to figure out its goal.
