@@ -57,6 +57,52 @@ Depth First Search (DFS) is a widely used interview question. Learn about it in 
 
 Learn about recursion in [this video](https://www.coursera.org/lecture/principles-of-computing-2/recursion-ccrwD).
 
+## Data Structures
+
+Here are [the most commonly used data structures](https://www.freecodecamp.org/news/the-top-data-structures-you-should-know-for-your-next-coding-interview-36af0831f5e3/):
+
+1. [Arrays](#arrays)
+2. [Stacks](#stacks)
+3. [Queues](#queues)
+4. [Linked Lists](#linked-lists)
+5. [Trees](#trees)
+6. [Graphs](#graphs)
+7. [Hash Tables](#hash-tables)
+
+### Arrays
+
+An array is the simplest and most widely used data structure. Other data structures like stacks and queues are derived from arrays.
+
+Here’s an image of a simple array of size 4, containing elements (1, 2, 3 and 4).
+
+![array](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/array.png)
+
+Each data element is assigned a positive numerical value called the **Index**, which corresponds to the position of that item in the array. The majority of languages define the starting index of the array as 0.
+
+Basic Operations on Arrays:
+* Insert — Inserts an element at given index
+* Get — Returns the element at given index
+* Delete — Deletes an element at given index
+* Size — Get the total number of elements in array
+
+Commonly Asked Array Interview Questions:
+* Find the second minimum element of an array
+* First non-repeating integers in an array
+* Merge two sorted arrays
+* Rearrange positive and negative values in an array
+
 ## Reading Code
 
-As an engineer or scientist, significant time is spent reading code others have written. Our advice for you to understand code written by others is to read a lot of code and try to figure out its goal. You can find tips for reading code in [this page](https://wiki.c2.com/?TipsForReadingCode). Also, you can find some advice on how to quickly read other people's code [here](https://selftaughtcoders.com/how-to-quickly-and-effectively-read-other-peoples-code/).
+As an engineer or scientist, significant time is spent reading code others have written. Our advice for you to understand code written by others is to read a lot of code and try to figure out its goal.
+
+Here are [the tips for reading code](https://wiki.c2.com/?TipsForReadingCode):
+1. Build and Run the Program
+2. Find the High-Level Logic
+3. Draw Some Flowchart
+4. Examine Library Calls
+5. Search for Key Words
+6. Leverage the Power of Code Comprehension Tools
+7. Print the Code
+8. Write Unit Tests
+9. Comment the Code
+10. Clean up the Code
