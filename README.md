@@ -101,7 +101,10 @@ while not q.Empty():
 
 ### Backtracking
 
-Learn about backtracking in [this video](https://www.youtube.com/watch?v=gBC_Fd8EE8A).
+Learn about backtracking in [this video](https://www.youtube.com/watch?v=gBC_Fd8EE8A):
+* Backtracking solves problems by trying a series of actions. If a series fails, we back up and try a different series.
+* A maze is a classic example, but the approach can be used on a wide variety of problems.
+* The recursive solution may be elegant, but remember not to dwell on the backtracking concept or what the recursion is doing.
 
 [back to current section](#algorithms)
 
@@ -125,7 +128,21 @@ Depth First Search (DFS) is a widely used interview question. Learn about it in 
 
 ### Recursion
 
-Learn about recursion in [this video](https://www.coursera.org/lecture/principles-of-computing-2/recursion-ccrwD).
+Learn about recursion in [this video](https://www.coursera.org/lecture/principles-of-computing-2/recursion-ccrwD):
+* Used when problems exhibit common sub-structures.
+* SumUpTo(n): Base case = 1 when n = 1; Recursive/Inductive case = n + SumUpTo(n - 1) when n > 1
+
+```
+def sum_up_to(n):
+  if n == 1: return 1
+  else: return n + sum_up_to(n - 1)
+
+def is_palindrome(word):
+  if len(word) < 2: return True
+  else:
+    if word[0] != word[-1]: return False
+    else: return is_palindrome(word[1:-1])
+```
 
 [back to current section](#algorithms)
 
