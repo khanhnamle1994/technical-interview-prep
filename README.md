@@ -110,19 +110,46 @@ Learn about backtracking in [this video](https://www.youtube.com/watch?v=gBC_Fd8
 
 ### Binary Search
 
-Implementing a binary search is a common interview question. Learn about binary search in [this Khan Academy page](https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search).
+Binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed down the possible locations to just one.
+
+Here's the pseudocode for binary search, modified for searching in an array. The inputs are the array, which we call array; the number n of elements in array; and target, the number being searched for. The output is the index in array of target:
+1. Let min = 0 and max = n-1.
+2. Compute guess as the average of max and min, rounded down (so that it is an integer).
+3. If array[guess] equals target, then stop. You found it! Return guess.
+4. If the guess was too low, that is, array[guess] < target, then set min = guess + 1.
+5. Otherwise, the guess was too high. Set max = guess - 1.
+6. Go back to step 2.
 
 [back to current section](#algorithms)
 
 ### Breadth First Search
 
-Breadth First Search (BFS) is a widely used interview question. Learn about it in [this video](https://www.coursera.org/lecture/algorithms-part2/breadth-first-search-DjaET).
+Breadth First Search (BFS) is a widely used interview question. Learn about it in [this video](https://www.coursera.org/lecture/algorithms-part2/breadth-first-search-DjaET):
+* BFS puts unvisited vertices on a queue.
+* **Shortest Path** - Find path from s to t that uses *fewest number of edges*
+
+```
+BFS(from source vertex s)
+Put s onto a FIFO queue, and mark s as visited.
+Repeat until the queue is empty:
+> remove the least recently added vertex v.
+> add each of v's unvisited neighbors to the queue, and mark them as visited.
+```
 
 [back to current section](#algorithms)
 
 ### Depth First Search
 
-Depth First Search (DFS) is a widely used interview question. Learn about it in [this video](https://www.coursera.org/lecture/algorithms-part2/depth-first-search-mW9aG).
+Depth First Search (DFS) is a widely used interview question. Learn about it in [this video](https://www.coursera.org/lecture/algorithms-part2/depth-first-search-mW9aG):
+* DFS puts unvisited vertices on a stack.
+* Idea: Mimic maze exploration.
+* Applications: Find all vertices connected to a given source vertex, find a path beteween 2 vertices.
+
+```
+DFS (to visit a vertex v)
+Mark v as visited.
+Recursively visit all unmarked vertices w adjacent to v.
+```
 
 [back to current section](#algorithms)
 
