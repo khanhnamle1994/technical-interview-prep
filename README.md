@@ -1,4 +1,4 @@
-## Technical Interview Prep
+# Technical Interview Prep
 
 These are the best online resources that I used while preparing for technical coding interviews:
 
@@ -9,7 +9,18 @@ These are the best online resources that I used while preparing for technical co
 * [LeetCode](https://leetcode.com/): One of the best online resource providing a rich library of more than 300 real coding interview questions with 7 supported languages - C, C++, Java, Python, C#, JavaScript, Ruby.
 * [Interview Cake](https://www.interviewcake.com/): Another site that preps software engineering candidates for coding interview.
 
-## Sorting Algorithms
+## Algorithms
+
+Here are the algorithms:
+* [Sorting](#sorting)
+* [Tree Traversals](#tree-traversals)
+* [Backtracking](#backtracking)
+* [Binary Search](#binary-search)
+* [Breadth First Search](#breadth-first-search)
+* [Depth First Search](#depth-first-search)
+* [Recursion](#recursion)
+
+### Sorting
 
 * **Merge Sort** is a comparison-based algorithm that focuses on how to merge together 2 pre-sorted arrays such that the resulting array is also sorted.
 * **Insertion Sort** is a comparison-based algorithm that builds a final sorted array one element at a time. It iterates through an input array and removes one element per iteration, finds the place the element belongs in the array, and then places it there.
@@ -29,33 +40,96 @@ To choose a sorting algorithm for a particular problem, consider the running tim
 |    Heapsort    |  O(nlogn) |  O(nlogn)  |   O(nlogn)   |       O(1)       |      No     |
 |  Counting Sort |   O(k+n)  |   O(k+n)   |    O(k+n)    |      O(k+n)      |     Yes     |
 
-## Tree
+[back to current section](#algorithms)
 
-Review the [tree](https://www.coursera.org/lecture/data-structures/trees-95qda) data structure.
-
-## Tree Traversals
+### Tree Traversals
 
 Tree traversals are commonly used in interviews. Learn about pre-order, in-order and post-order traversal in [this video](https://www.coursera.org/lecture/data-structures/tree-traversal-fr51b).
 
-## Backtracking
+* Often we want to visit the nodes of a tree in a particular order (for example, print the nodes of the tree)
+* Depth-First: We completely traverse one sub-tree before exploring a sibling sub-tree (pre-oder, in-order, post-order).
+* Breadth-First: We traverse all nodes at one level before progressing to the next level.
+* When working with a tree, recursive algorithms are common.
+
+**Depth-First**
+
+```
+InOrderTraversal(tree)
+
+if tree = nil: return
+InOrderTraversal(tree.left)
+Print(tree.key)
+InOrderTraversal(tree.right)
+```
+
+```
+PreOrderTraversal(tree)
+
+if tree = nil: return
+Print(tree.key)
+PreOrderTraversal(tree.left)
+PreOrderTraversal(tree.right)
+```
+
+```
+PostOrderTraversal(tree)
+
+if tree = nil: return
+PostOrderTraversal(tree.left)
+PostOrderTraversal(tree.right)
+Print(tree.key)
+```
+
+**Breadth-First**
+
+```
+LevelTraversal(tree)
+
+if tree = nil: return
+Queue q
+q.Enqueue(tree)
+while not q.Empty():
+  node <- q.Dequeue()
+  Print(node)
+  if node.left != nil:
+    q.Enqueue(node.left)
+  if node.right != nil:
+    q.Enqueue(node.right)
+```
+
+[back to current section](#algorithms)
+
+### Backtracking
 
 Learn about backtracking in [this video](https://www.youtube.com/watch?v=gBC_Fd8EE8A).
 
-## Binary Search
+[back to current section](#algorithms)
+
+### Binary Search
 
 Implementing a binary search is a common interview question. Learn about binary search in [this Khan Academy page](https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search).
 
-## Breadth First Search
+[back to current section](#algorithms)
+
+### Breadth First Search
 
 Breadth First Search (BFS) is a widely used interview question. Learn about it in [this video](https://www.coursera.org/lecture/algorithms-part2/breadth-first-search-DjaET).
 
-## Depth First Search
+[back to current section](#algorithms)
+
+### Depth First Search
 
 Depth First Search (DFS) is a widely used interview question. Learn about it in [this video](https://www.coursera.org/lecture/algorithms-part2/depth-first-search-mW9aG).
 
-## Recursion
+[back to current section](#algorithms)
+
+### Recursion
 
 Learn about recursion in [this video](https://www.coursera.org/lecture/principles-of-computing-2/recursion-ccrwD).
+
+[back to current section](#algorithms)
+
+[back to top](#technical-interview-prep)
 
 ## Data Structures
 
@@ -224,7 +298,7 @@ Commonly Asked Graph Interview Questions:
 
 [back to current section](#data-structures)
 
-### Hash Table
+### Hash Tables
 
 Hashing is a process used to uniquely identify objects and store each object at some pre-calculated unique index called its “key.” So, the object is stored in the form of a “key-value” pair, and the collection of such items is called a “dictionary.” Each object can be searched using that key. There are different data structures based on hashing, but the most commonly used data structure is the **hash table**.
 
@@ -246,6 +320,8 @@ Commonly Asked Hashing Interview Questions:
 * Check if given arrays are disjoint
 
 [back to current section](#data-structures)
+
+[back to top](#technical-interview-prep)
 
 ## Reading Code
 
