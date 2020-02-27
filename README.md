@@ -22,23 +22,17 @@ Here are the algorithms:
 
 ### Sorting
 
-* **Merge Sort** is a comparison-based algorithm that focuses on how to merge together 2 pre-sorted arrays such that the resulting array is also sorted.
-* **Insertion Sort** is a comparison-based algorithm that builds a final sorted array one element at a time. It iterates through an input array and removes one element per iteration, finds the place the element belongs in the array, and then places it there.
-* **Bubble Sort** is a comparison​-based algorithm that compares each pair of elements in an array and swaps them if they are out of order until the entire array is sorted. For each element in the list, the algorithm compares every pair of elements.
-* **Quick Sort** is a comparison-based algorithm that uses divide-and-conquer to sort an array. The algorithm picks a pivot element, A[q], and then rearranges the array into two subarrays A[p … q − 1], such that all elements are less than A[q], and A[q + 1 … r], such that all elements are greater than or equal to A[q].
-* **Heap Sort** is a comparison-based algorithm that uses a binary heap data structure to sort elements. It divides its input into a sorted and an unsorted region, and it iteratively shrinks the unsorted region by extracting the largest element and moving that to the sorted region.
-* **Counting Sort** is an integer sorting algorithm that assumes that each of the n input elements in a list has a key value ranging from 0 to k, for some integer k. For each element in the list, counting sort determines the number of elements that are less than it. Counting sort can use this information to place the element directly into the correct slot of the output array.
+#### Bubble Sort
 
-To choose a sorting algorithm for a particular problem, consider the running time, space complexity, and the expected format of the input list.
+- This simple sorting algorithm iterates over a list, comparing elements in pairs and swapping them until the larger elements "bubble up" to the end of the list, and the smaller elements stay at the "bottom".
+- [Implementation](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Sorting-in-Python/bubble_sort.py)
+- In the worst case scenario (when the list is in reverse order), this algorithm would have to swap every single item of the array. Therefore, if we have n elements in our list, we would have n iterations per item - thus Bubble Sort's time complexity is O(n^2).
 
-|    Algorithm   | Best-case | Worst-case | Average-case | Space Complexity |   Stable?   |
-|:--------------:|:---------:|:----------:|:------------:|:----------------:|:-----------:|
-|   Merge Sort   |  O(nlogn) |  O(nlogn)  |   O(nlogn)   |       O(n)       |     Yes     |
-| Insertion Sort |    O(n)   |   O(n^2)   |    O(n^2)    |       O(1)       |     Yes     |
-|   Bubble Sort  |    O(n)   |   O(n^2)   |    O(n^2)    |       O(1)       |     Yes     |
-|    Quicksort   |  O(nlogn) |   O(n^2)   |   O(nlogn)   | logn best, n avg | Usually not |
-|    Heapsort    |  O(nlogn) |  O(nlogn)  |   O(nlogn)   |       O(1)       |      No     |
-|  Counting Sort |   O(k+n)  |   O(k+n)   |    O(k+n)    |      O(k+n)      |     Yes     |
+#### Selection Sort
+
+- This algorithm segments the list into two parts: sorted and unsorted. We continuously remove the smallest element of the unsorted segment of the list and append it to the sorted segment.
+- [Implementation](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Sorting-in-Python/selection_sort.py)
+- For a list with n elements, the outer loop iterates n times. The inner loop iterate n-1 when i is equal to 1, and then n-2 as i is equal to 2 and so forth. The amount of comparisons are (n - 1) + (n - 2) + ... + 1, which gives Selection Sort a time complexity of O(n^2).
 
 [back to current section](#algorithms)
 
