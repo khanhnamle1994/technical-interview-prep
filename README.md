@@ -65,7 +65,7 @@ Here are the algorithms:
 #### Quick Sort
 
 - This divide and conquer algorithm is the most often used sorting algorithm. When configured correctly, it's extremely efficient and does not require the extra space Merge Sort uses. We partition the list around a pivot element, sorting values around the pivot.
-- Implementation](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Sorting-in-Python/quick_sort.py)
+- [Implementation](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Sorting-in-Python/quick_sort.py)
 - The worst case scenario is when the smallest or largest element is always selected as the pivot. This would create partitions of size n-1, causing recursive calls n-1 times. This leads us to a worst case time complexity of O(n^2).
 - While this is a terrible worst case, Quick Sort is heavily used because it's average time complexity is much quicker. While the `partition` function utilizes nested while loops, it does comparisons on all elements of the array to make its swaps. As such, it has a time complexity of O(n).
 - With a good pivot, the Quick Sort function would partition the array into halves which grows logarithmically with n. Therefore the average time complexity of the Quick Sort algorithm is O(nlog(n)).
@@ -144,13 +144,15 @@ Learn about backtracking in [this video](https://www.youtube.com/watch?v=gBC_Fd8
 
 Binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed down the possible locations to just one.
 
-Here's the pseudocode for binary search, modified for searching in an array. The inputs are the array, which we call array; the number n of elements in array; and target, the number being searched for. The output is the index in array of target:
-1. Let min = 0 and max = n-1.
-2. Compute guess as the average of max and min, rounded down (so that it is an integer).
-3. If array[guess] equals target, then stop. You found it! Return guess.
-4. If the guess was too low, that is, array[guess] < target, then set min = guess + 1.
-5. Otherwise, the guess was too high. Set max = guess - 1.
-6. Go back to step 2.
+We basically ignore half of the elements just after one comparison.
+1. Compare x with the middle element.
+2. If x matches with middle element, we return the mid index.
+3. Else If x is greater than the mid element, then x can only lie in right half subarray after the mid element. So we recur for right half.
+4. Else (x is smaller) recur for the left half.
+
+[Recursive](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Search-in-Python/binary_search_recursive.py) and [Iterative](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Search-in-Python/binary_search_iterative.py) Implementation
+
+![Binary-Search](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Search-in-Python/binary_search_gif.gif)
 
 [back to current section](#algorithms)
 
