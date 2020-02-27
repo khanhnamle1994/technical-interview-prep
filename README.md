@@ -158,32 +158,29 @@ We basically ignore half of the elements just after one comparison.
 
 ### Breadth First Search
 
-Breadth First Search (BFS) is a widely used interview question. Learn about it in [this video](https://www.coursera.org/lecture/algorithms-part2/breadth-first-search-DjaET):
-* BFS puts unvisited vertices on a queue.
-* **Shortest Path** - Find path from s to t that uses *fewest number of edges*
+Breadth First Search (BFS) is a widely used interview question. Learn about it in [this video](https://www.coursera.org/lecture/algorithms-part2/breadth-first-search-DjaET). It is an algorithm used for tree traversal on graphs or tree data structures. BFS can be easily implemented using recursion and data structures like dictionaries and lists.
 
-```
-BFS(from source vertex s)
-Put s onto a FIFO queue, and mark s as visited.
-Repeat until the queue is empty:
-> remove the least recently added vertex v.
-> add each of v's unvisited neighbors to the queue, and mark them as visited.
-```
+**The Algorithm**
+
+1. Pick any node, visit the adjacent unvisited vertex, mark it as visited, display it, and insert it in a queue.
+2. If there are no remaining adjacent vertices left, remove the first vertex from the queue.
+3. Repeat step 1 and step 2 until the queue is empty or the desired node is found.
+
+- [Implementation](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Search-in-Python/bfs.py )
+- Since all of ​the nodes and vertices are visited, the time complexity for BFS on a graph is O(V + E); where V is the number of vertices and E is the number of edges.
 
 [back to current section](#algorithms)
 
 ### Depth First Search
 
-Depth First Search (DFS) is a widely used interview question. Learn about it in [this video](https://www.coursera.org/lecture/algorithms-part2/depth-first-search-mW9aG):
-* DFS puts unvisited vertices on a stack.
-* Idea: Mimic maze exploration.
-* Applications: Find all vertices connected to a given source vertex, find a path beteween 2 vertices.
+Depth First Search (DFS) is a widely used interview question. Learn about it in [this video](https://www.coursera.org/lecture/algorithms-part2/depth-first-search-mW9aG). It is an algorithm for tree traversal on graph or tree data structures. It can be implemented easily using recursion and data structures like dictionaries and arrays.
 
-```
-DFS (to visit a vertex v)
-Mark v as visited.
-Recursively visit all unmarked vertices w adjacent to v.
-```
+**The Algorithm**
+1. Pick any node. If it is unvisited, mark it as visited and recur on all its adjacent nodes.
+2. Repeat until all the nodes are visited, or the node to be searched is found.
+
+- [Implementation](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Search-in-Python/dfs.py)
+- Since all of ​the nodes and vertices are visited, the time complexity for DFS on a graph is O(V + E); where V is the number of vertices and E is the number of edges. In case of DFS on a tree, the time complexity is O(V), where V is the number of nodes.
 
 [back to current section](#algorithms)
 
