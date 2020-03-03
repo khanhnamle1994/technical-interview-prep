@@ -72,6 +72,17 @@ Here are the algorithms:
 
 ![Quick-Sort](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Sorting-in-Python/Quick_Sort.gif)
 
+**Time Complexities of All Sorting Algorithms**
+
+|    Algorithm   | Best Complexity | Average Complexity | Worst Complexity |
+|:--------------:|:---------------:|:------------------:|:----------------:|
+|   Bubble Sort  |       O(n)      |       O(n^2)       |      O(n^2)      |
+| Selection Sort |      O(n^2)     |       O(n^2)       |      O(n^2)      |
+| Insertion Sort |       O(n)      |       O(n^2)       |      O(n^2)      |
+|    Heap Sort   |    O(n logn)    |      O(n logn)     |     O(n logn)    |
+|   Merge Sort   |    O(n logn)    |      O(n logn)     |     O(n logn)    |
+|   Quick Sort   |    O(n logn)    |      O(n logn)     |      O(n^2)      |
+
 [back to current section](#algorithms)
 
 ### Tree Traversals
