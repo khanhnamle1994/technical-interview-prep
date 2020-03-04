@@ -240,16 +240,40 @@ Here’s an image of a simple array of size 4, containing elements (1, 2, 3 and 
 Each data element is assigned a positive numerical value called the ≈Index**, which corresponds to the position of that item in the array. The majority of languages define the starting index of the array as 0.
 
 Basic Operations on Arrays:
-* Insert — Inserts an element at given index
-* Get — Returns the element at given index
-* Delete — Deletes an element at given index
-* Size — Get the total number of elements in array
+* **Insert** — Inserts an element at given index: O(n)
+* **Get** — Returns the element at given index: O(n)
+* **Delete** — Deletes an element at given index: O(n)
+* **Size** — Get the total number of elements in array: O(1)
 
 Commonly Asked Array Interview Questions:
-* Find the second minimum element of an array
-* First non-repeating integers in an array
-* Merge two sorted arrays
-* Rearrange positive and negative values in an array
+1. Find the second minimum element of an array
+
+  - A **simple solution** is to sort the array in increasing order. The first 2 elements in sorted array would be 2 smallest elements. Time complexity is O(n logn).
+  - A **better solution** is to scan the array twice. In 1st traversal, find the minimum element. Let this element be x. In 2nd traversal, find the smallest element greater than x. Time complexity of this solution is O(n).
+  - An **efficient solution** can find the minimum 2 elements in one traversal.
+
+  ```
+  1> Initialize both first and second smallest as INT_MAX
+  2> Loop through all elements:
+    a> If the current element is smaller than the first, then update first and second.
+    b> Else if the current element is smaller than second, then update second.
+  ```
+
+2. Find the first non-repeating element in an array of integers
+
+  - A **simple solution** is to use 2 loops. The outer loop picks elements one by one and inner loop checks if the element is present more than once or not.
+  - An **efficient solution** is to use hashing: (1) Traverse array and insert elements and their counts in a hash table. (2) Traverse array again and print first element with count equals to 1.
+  - **Further optimization**: If array has many duplicates, we can also store index in hash table, using a hash table where value is a pair. Now we only need to traverse keys in hash table to find first non-repeating.
+
+3. Merge two sorted arrays
+
+  - The idea is to use Merge function of Merge sort - O(n1 + n2) time and O(n1 + n2) space
+    - Create a new array arr3[] of size n1 + n2.
+    - Simultaneously traverse arr1[] and arr2[]
+      - Pick smaller of current elements in arr1[] and arr2[], copy this smaller element to next position in arr3[] and move ahead in arr3[] and the array whose element is picked.
+    - If there are remaining elements in arr1[] or arr2[], copy them also in arr3[].
+
+![merge-sorted-arrays](/https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assetsMerge-two-sorted-arrays.png)
 
 [back to current section](#data-structures)
 
@@ -262,10 +286,10 @@ Here’s an image of stack containing three data elements (1, 2 and 3), where 3 
 ![stack](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/stack.png)
 
 Basic Operations of Stack:
-* Push — Inserts an element at the top
-* Pop — Returns the top element after removing from the stack
-* isEmpty — Returns true if the stack is empty
-* Top — Returns the top element without removing from the stack
+* **Push** — Inserts an element at the top: O(1)
+* **Pop** — Returns the top element after removing from the stack: O(1)
+* **isEmpty** — Returns true if the stack is empty: O(1)
+* **Top** — Returns the top element without removing from the stack: O(1)
 
 Commonly Asked Stack Interview Questions:
 * Evaluate postfix expression using a stack
@@ -285,10 +309,10 @@ Here’s an image of Queue containing four data elements (1, 2, 3 and 4), where 
 ![queue](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/queue.png)
 
 Basic Operations of Queue:
-* Enqueue() — Inserts element to the end of the queue
-* Dequeue() — Removes an element from the start of the queue
-* isEmpty() — Returns true if queue is empty
-* Top() — Returns the first element of the queue
+* **Enqueue()** — Inserts element to the end of the queue: O(1)
+* **Dequeue()** — Removes an element from the start of the queue: O(1)
+* **isEmpty()** — Returns true if queue is empty: O(1)
+* **Top()** — Returns the first element of the queue: O(1)
 
 Commonly Asked Queue Interview Questions:
 * Implement stack using a queue
@@ -314,12 +338,12 @@ Following are the types of linked lists:
 * Doubly Linked List (Bi-directional)
 
 Basic Operations of Linked List:
-* InsertAtEnd — Inserts given element at the end of the linked list
-* InsertAtHead — Inserts given element at the start/head of the linked list
-* Delete — Deletes given element from the linked list
-* DeleteAtHead — Deletes first element of the linked list
-* Search — Returns the given element from a linked list
-* isEmpty — Returns true if the linked list is empty
+* **InsertAtEnd** — Inserts given element at the end of the linked list: O(1)
+* **InsertAtHead** — Inserts given element at the start/head of the linked list: O(1)
+* **Delete** — Deletes given element from the linked list: O(1)
+* **DeleteAtHead** — Deletes first element of the linked list: O(1)
+* **Search** — Returns the given element from a linked list: O(n)
+* **isEmpty** — Returns true if the linked list is empty: O(1)
 
 Commonly Asked Linked List Interview Questions:
 * Reverse a linked list
@@ -388,12 +412,12 @@ Commonly Asked Graph Interview Questions:
 
 Hashing is a process used to uniquely identify objects and store each object at some pre-calculated unique index called its “key.” So, the object is stored in the form of a “key-value” pair, and the collection of such items is called a “dictionary.” Each object can be searched using that key. There are different data structures based on hashing, but the most commonly used data structure is the **hash table**.
 
-Hash tables are generally implemented using arrays.
+Hash tables are generally implemented using arrays. Its search, insert, and delete operations all take O(1) average complexity and O(n) worst complexity.
 
 The performance of hashing data structure depends upon these three factors:
-* Hash Function
-* Size of the Hash Table
-* Collision Handling Method
+* Hash Function: A function that maps a big number or string to a small integer that can be used as the index in the hash table.
+* Size of the Hash Table: Changing the size of the hash table will change the compression function, leading to the keys being allotted to different buckets.
+* Collision Handling Method: Hash function may return the same hash value for 2 or more keys (collision). We can resolve this problem either via separate chaining or open addressing.
 
 Here’s an illustration of how the hash is mapped in an array. The index of this array is calculated through a Hash Function.
 
