@@ -267,13 +267,13 @@ Commonly Asked Array Interview Questions:
 
 3. Merge two sorted arrays
 
-  - The idea is to use Merge function of Merge sort - O(n1 + n2) time and O(n1 + n2) space
+  - The idea is to use **Merge** function of **Merge sort** - O(n1 + n2) time and O(n1 + n2) space
     - Create a new array arr3[] of size n1 + n2.
     - Simultaneously traverse arr1[] and arr2[]
       - Pick smaller of current elements in arr1[] and arr2[], copy this smaller element to next position in arr3[] and move ahead in arr3[] and the array whose element is picked.
     - If there are remaining elements in arr1[] or arr2[], copy them also in arr3[].
 
-![merge-sorted-arrays](/https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assetsMerge-two-sorted-arrays.png)
+![merge-sorted-arrays](/https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/Merge-two-sorted-arrays.png)
 
 [back to current section](#data-structures)
 
@@ -374,11 +374,62 @@ The following are the types of trees:
 
 Out of the above, Binary Tree and Binary Search Tree are the most commonly used trees.
 
+A **binary tree** is a non linear data structure where each node can have at most 2 child nodes.
+![](assets/binary-tree.png)
+- If a node have 0 child nodes then it is called a leaf node. In the above image {2,5,11,4} are the leaf nodes.
+- The worst case complexity for searching a node is O(n).
+
+**Binary search tree** is a binary tree in which a node have a value greater than all values in its left subtree and smaller than all values in its right subtree.
+![](assets/binary-search-tree.png)
+- If a Binary search tree is balanced then you can find a value in O(log n) time.
+- Let's say we want to find node 12:
+  - We will start from the root node which in this case is 15.
+  - Current node is 15, but 12<15 , we go in the left subtree because right subtree has even greater values.
+  - Current node is 10, but 12>10 , we go in the right subtree because left subtree has even smaller values.
+  - Current node is 12. BOOM!
+
 Commonly Asked Tree Interview Questions:
-* Find the height of a binary tree
-* Find k-th maximum value in a binary search tree
-* Find nodes at “k” distance from the root
-* Find ancestors of a given node in a binary tree
+1. Find the height of a binary tree
+
+Recursively calculate the height of left and right subtrees of a node and assign the height to the node as max of the heights of 2 children plus 1.
+
+```
+1 - If tree is empty, then return 0
+2 - Else
+  (a) Get the max depth of left subtree recursively
+  (b) Get the max depth of right subtree recursively
+  (c) Get the max of max depths of left and right subtrees and add 1 to it for the current node
+  (d) Return max_depth
+```
+
+2. Find nodes at “k” distance from the root
+
+```
+def printKDistance(root, k):
+  if root is None: return
+  if k == 0:
+    print(root.data)
+  else:
+    printKDistance(root.left, k - 1)
+    printKDistance(root.right, k - 1)
+```
+
+3. Find ancestors of a given node in a binary tree
+
+```
+def printAncestors(root, target):
+
+  # Base case
+  if root == None: return False
+  if root.data == target: return True
+
+  # If target is present in either left or right subtree of this node, then print this node
+  if (printAncestors(root.left, target) or printAncestors(root.right, target)):
+    print(root.data)
+    return True
+
+  return False
+```
 
 [back to current section](#data-structures)
 
