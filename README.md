@@ -273,7 +273,7 @@ Commonly Asked Array Interview Questions:
       - Pick smaller of current elements in arr1[] and arr2[], copy this smaller element to next position in arr3[] and move ahead in arr3[] and the array whose element is picked.
     - If there are remaining elements in arr1[] or arr2[], copy them also in arr3[].
 
-![merge-sorted-arrays](/https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/Merge-two-sorted-arrays.png)
+![merge-sorted-arrays](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/Merge-two-sorted-arrays.png)
 
 [back to current section](#data-structures)
 
@@ -290,6 +290,32 @@ Basic Operations of Stack:
 * **Pop** — Returns the top element after removing from the stack: O(1)
 * **isEmpty** — Returns true if the stack is empty: O(1)
 * **Top** — Returns the top element without removing from the stack: O(1)
+
+```
+class Stack:
+
+    def __init__(self):
+        self.stack = []
+
+    def add(self, dataval):
+        # Use list append method to add element
+        if dataval not in self.stack:
+            self.stack.append(dataval)
+            return True
+        else:
+            return False
+
+    def peek(self):
+        # Use peek to look at the top of the stack
+	       return self.stack[-1]
+
+    def remove(self):
+        # Use list pop method to remove element
+        if len(self.stack) <= 0:
+            return ("No element in the Stack")
+        else:
+            return self.stack.pop()
+```
 
 Commonly Asked Stack Interview Questions:
 * Evaluate postfix expression using a stack
@@ -313,6 +339,31 @@ Basic Operations of Queue:
 * **Dequeue()** — Removes an element from the start of the queue: O(1)
 * **isEmpty()** — Returns true if queue is empty: O(1)
 * **Top()** — Returns the first element of the queue: O(1)
+
+A queue can be implemented using python list where we can use the insert() and pop() methods to add and remove elements. Their is no insertion as data elements are always added at the end of the queue.
+
+```
+class Queue:
+
+    def __init__(self):
+        self.queue = list()
+
+    def addtoq(self,dataval):
+        # Insert method to add element
+        if dataval not in self.queue:
+            self.queue.insert(0,dataval)
+            return True
+        return False
+
+    def size(self):
+        return len(self.queue)
+
+    # Pop method to remove element
+    def removefromq(self):
+        if len(self.queue)>0:
+            return self.queue.pop()
+        return ("No elements in Queue!")
+```
 
 Commonly Asked Queue Interview Questions:
 * Implement stack using a queue
@@ -439,20 +490,21 @@ A graph is a set of nodes that are connected to each other in the form of a netw
 
 ![graph](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/graph.png)
 
-Types of Graphs:
-* Undirected Graph
-* Directed Graph
+- Types of Graphs: Undirected Graph and Directed Graph
+- In a programming language, graphs can be represented using two forms: Adjacency Matrix and Adjacency List
+- Common Graph Traversing Algorithms: Breadth First Search and Depth First Search
 
-In a programming language, graphs can be represented using two forms:
-* Adjacency Matrix
-* Adjacency List
-
-Common Graph Traversing Algorithms:
-* Breadth First Search
-* Depth First Search
+A graph can be easily presented using the python dictionary data types. We represent the vertices as the keys of the dictionary and the connection between the vertices also called edges as the values in the dictionary. Here are basic operations:
+* Create a graph
+* Display graph vertices
+* Display graph edges
+* Add a vertex
+* Add an edges
 
 Commonly Asked Graph Interview Questions:
-* Implement Breadth and Depth First Search
+* Implement Breadth and Depth First Search:
+  - [BFS](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Search-in-Python/bfs.py)
+  - [DFS](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Search-in-Python/dfs.py)
 * Check if a graph is a tree or not
 * Count number of edges in a graph
 * Find the shortest path between two vertices
@@ -473,6 +525,27 @@ The performance of hashing data structure depends upon these three factors:
 Here’s an illustration of how the hash is mapped in an array. The index of this array is calculated through a Hash Function.
 
 ![hash table](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/hash-table.png)
+
+In Python, the Dictionary data types represent the implementation of hash tables. Here are basic operations:
+* To **access** dictionary elements, you can use the familiar square brackets along with the key to obtain its value.
+* You can *update* a dictionary by adding a new entry or a key-value pair, modifying an existing entry, or deleting an existing entry.
+* You can either remove individual dictionary elements or clear the entire contents of a dictionary. You can also **delete** entire dictionary in a single operation. To explicitly remove an entire dictionary, just use the `del` statement.
+
+```
+# Declare a dictionary
+dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+
+# Accessing the dictionary with its key
+print "dict['Name']: ", dict['Name']
+print "dict['Age']: ", dict['Age']
+
+dict['Age'] = 8; # update existing entry
+dict['School'] = "DPS School"; # Add new entry
+
+del dict['Name']; # remove entry with key 'Name'
+dict.clear();     # remove all entries in dict
+del dict ;        # delete entire dictionary
+```
 
 Commonly Asked Hashing Interview Questions:
 * Find symmetric pairs in an array
