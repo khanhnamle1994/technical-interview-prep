@@ -1,6 +1,7 @@
 # Technical Interview Prep
 
 Here are the sections:
+* [How to Succeed in Data Structures and Algorithms Interview](#how-to-succeed-in-data-structures-and-algorithms-interview)
 * [Algorithms](#algorithms)
 * [Data Structures](#data-structures)
 * [Reading Code](#reading-code)
@@ -13,6 +14,92 @@ These are the best online resources that I used while preparing for technical co
 * [Pramp](https://www.pramp.com/): A free online peer-to-peer platform for practicing technical interviews.
 * [LeetCode](https://leetcode.com/): One of the best online resource providing a rich library of more than 300 real coding interview questions with 7 supported languages - C, C++, Java, Python, C#, JavaScript, Ruby.
 * [Interview Cake](https://www.interviewcake.com/): Another site that preps software engineering candidates for coding interview.
+
+## How to Succeed in Data Structures and Algorithms Interview
+
+* [Preparation](#preparation)
+* [Understand the Problem](#understand-the-problem)
+* [Brute Force Solution](#brute-force-solution)
+* [Optimize Your Solution](#optimize-your-solution)
+* [Code Your Solution](#code-your-solution)
+* [Test Your Solution](#test-your-solution)
+
+### Preparation
+
+* **Develop a deep knowledge of data structures**: You should understand and be able to talk about different data structures and their strengths, weaknesses, and how they compare to each other. Taking the time to implement data structures from scratch will leave you much better prepared for DS&A interviews, than studying them as an abstract concept.
+* **Understand Big O notation**: You should be able to talk about Big O notation for both time and space complexity. Make sure to read about common algorithms and their memory and runtime complexity to train your big O analysis muscle.
+* **Know the major sorting algorithms**: Given that differences in time and space complexity can derail your optimal solution for an algorithm problem, it’s good to be familiar with the major algorithms per category (string matching, sorting, search, graph, traversal, etc).
+
+[back to current section](#how-to-succeed-in-data-structures-and-algorithms-interview)
+
+### Understand the Problem
+
+* To verify your understanding, repeat the question back to the interviewer in your own words to make sure you got it correctly. There’s nothing worse than realizing mid-interview that you’re answering a completely different question. It could be helpful to use a test or two to verify your understanding of the problem.
+* You should feel comfortable asking your interviewer questions to define any ambiguities and ask them if you can make certain assumptions (e.g. “Can I assume the array is sorted?” or “Can I assume the input is valid?”). Remember that the interviewer’s goal is to get a good signal for how you think through an issue or problem.
+* You may consider asking them the following questions:
+  - How large is the range of values? What kind of values exists?
+  - How large is the size of the input? Are there duplicates within the input?
+  - What are some extreme cases of inputs?
+  - How is the input stored?
+* You should also ask whether you’ll eventually be optimizing for time, space, or both. Even if you believe you already know how to solve the problem, it’s important to ensure that you’re spending your time implementing the solution that your interviewer cares about.
+* Keep track of how much time you’re spending in the ideation phase to leave yourself enough time to code your solution.
+
+[back to current section](#how-to-succeed-in-data-structures-and-algorithms-interview)
+
+### Brute Force Solution
+
+* The worst outcome in a technical interview is to not write any code, and the easiest way to end up in that position is to overcomplicate the problem early in the interview.
+* Instead, talk through a solution you’re confident will work and let your interviewer know about the concessions you’ve made. You might think that if you present an initial suboptimal solution that you’ll never get hired, but this isn’t true. Communication is important here. You can score points with your interviewer by explaining the time and space complexity of your naive or brute-force solution and by clarifying why it’s suboptimal; you’ll have the chance to improve it later.
+* Now that you’ve talked through the brute-force solution, ask the interviewer whether they’d like you to implement the brute force solution or come up with a more efficient solution. If the former, skip the next section “Optimize your Solution” and come back to it at the end. Only start coding once you and your interviewer have agreed on an approach and they’ve given you the green light to move ahead.
+
+[back to current section](#how-to-succeed-in-data-structures-and-algorithms-interview)
+
+### Optimize Your Solution
+
+* Discuss your approach with your interviewer and lean on them to get a sense of whether they have a preference for whether you optimize for time, space, or both. When optimizing, some of your initial assumptions may change, so it’s important to check with your interviewer.
+* You may see the most optimal solution right away or be unsure on how to proceed. If you’re stuck, here are some common approaches to optimizing:
+  - Take a second look at the problem, its constraints, and write down your assumptions and possible simplifications.
+  - Consider similar problems you’ve seen and discuss them with your interviewer.
+  - Solve an example by hand and extrapolate about what algorithm(s) could be used.
+  - Simulate the brute-force solution by hand and identify the inefficiencies that could be optimized with a data structure.
+  - Solve a simple version of the problem first, then build on it.
+* Don’t forget to communicate and analyze the time or space complexity of the solution you plan to optimize. Once you and your interviewer agree that you have a good solution, it’s time to code it.
+
+[back to current section](#how-to-succeed-in-data-structures-and-algorithms-interview)
+
+### Code Your Solution
+
+* As an interviewee, it’s important to ensure that your interviewer understands what you’re doing and why you’re doing it in real-time. If you’re explaining your thought process out loud and you take a wrong turn, your interviewer may offer you a hint to get you back on track.
+* While you’re coding, don’t read your code verbatim; but rather, talk about the section of the code you’re implementing at a higher level. Explain why you wrote it that way and what it’s trying to achieve.
+* Remember that your interviewer needs to be able to understand your code to efficiently evaluate whether your code returns the expected result and solves the problem. As you code, keep these pointers in mind:
+  - Use good style when writing your code.
+  - Naming Matters.
+  - Demonstrate good modularity.
+  - Leave time to check for bugs and edge cases.
+  - If cutting corners, explain it to your interviewer.
+* Take a step back and briefly read through your solution, examining it as if it were written by someone else, but don’t start debugging it manually. This is the same approach that will be taken by your interviewer. Fix any issues you may find.
+* Then walk your interviewer through the code and explain your rationale. If you find a bug or mistake, feel free to acknowledge it and make the change.
+
+[back to current section](#how-to-succeed-in-data-structures-and-algorithms-interview)
+
+### Test Your Solution
+
+* During the testing portion of the interview, you should have a few goals in mind. You want to…
+  - Demonstrate that you care that your code actually works.
+  - Show that you can understand and solve problems even if it doesn’t work.
+  - Exhibit your understanding of the various edge cases that a real-world problem might present.
+  - Establish a feedback loop for your code that allows refactoring without having to worry about breaking existing functionality.
+* There are a few types of inputs you’re going to test for:
+  - Large and small valid inputs.
+  - Large and small invalid inputs.
+  - Random input.
+* For each input, manually go through your code and ensure that it performs. You should jot down or tell your interviewer the values of each variable as you walk them through the code.
+* If you find an error, explain the error to your interviewer, fix it, and move on. Similarly, if there are large duplicated code blocks in your solution, you can take the time to restructure the code.
+* In this stage, you’ll also have the opportunity to showcase your knowledge around automated testing. You can chat about how you’d generate different types of inputs, how you would stub parts of the code, the test runners you’d use, and more. These are all great signals to show an interviewer.
+
+[back to current section](#how-to-succeed-in-data-structures-and-algorithms-interview)
+
+[back to top](#technical-interview-prep)
 
 ## Algorithms
 
