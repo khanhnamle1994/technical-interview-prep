@@ -1,5 +1,10 @@
 # Technical Interview Prep
 
+Here are the sections:
+* [Algorithms](#algorithms)
+* [Data Structures](#data-structures)
+* [Reading Code](#reading-code)
+
 These are the best online resources that I used while preparing for technical coding interviews:
 
 * [Cracking The Coding Interview](http://www.crackingthecodinginterview.com/): The most popular book on the whole tech interview process, now in 6th edition. 189 programming interview questions are included, ranging from the basics to the trickiest algorithm problems.
@@ -245,7 +250,7 @@ Basic Operations on Arrays:
 * **Delete** — Deletes an element at given index: O(n)
 * **Size** — Get the total number of elements in array: O(1)
 
-Commonly Asked Array Interview Questions:
+**Commonly Asked Array Interview Questions**:
 1. Find the second minimum element of an array
 
   - A **simple solution** is to sort the array in increasing order. The first 2 elements in sorted array would be 2 smallest elements. Time complexity is O(n logn).
@@ -317,7 +322,7 @@ class Stack:
             return self.stack.pop()
 ```
 
-Commonly Asked Stack Interview Questions:
+**Commonly Asked Stack Interview Questions**:
 * Evaluate postfix expression using a stack
 * Sort values in a stack
 * Check balanced parentheses in an expression
@@ -365,7 +370,7 @@ class Queue:
         return ("No elements in Queue!")
 ```
 
-Commonly Asked Queue Interview Questions:
+**Commonly Asked Queue Interview Questions**:
 * Implement stack using a queue
 * Reverse first k elements of a queue
 * Generate binary numbers from 1 to n using a queue
@@ -396,7 +401,7 @@ Basic Operations of Linked List:
 * **Search** — Returns the given element from a linked list: O(n)
 * **isEmpty** — Returns true if the linked list is empty: O(1)
 
-Commonly Asked Linked List Interview Questions:
+**Commonly Asked Linked List Interview Questions**:
 * Reverse a linked list
 * Detect loop in a linked list
 * Return Nth node from the end in a linked list
@@ -439,7 +444,7 @@ A **binary tree** is a non linear data structure where each node can have at mos
   - Current node is 10, but 12>10 , we go in the right subtree because left subtree has even smaller values.
   - Current node is 12. BOOM!
 
-Commonly Asked Tree Interview Questions:
+**Commonly Asked Tree Interview Questions**:
 1. Find the height of a binary tree
 
 Recursively calculate the height of left and right subtrees of a node and assign the height to the node as max of the heights of 2 children plus 1.
@@ -495,13 +500,71 @@ A graph is a set of nodes that are connected to each other in the form of a netw
 - Common Graph Traversing Algorithms: Breadth First Search and Depth First Search
 
 A graph can be easily presented using the python dictionary data types. We represent the vertices as the keys of the dictionary and the connection between the vertices also called edges as the values in the dictionary. Here are basic operations:
-* Create a graph
-* Display graph vertices
-* Display graph edges
-* Add a vertex
-* Add an edges
+* To **display graph vertices**, we simple find the keys of the graph dictionary. We use the keys() method.
+* To **find graph edges**, we have to find each of the pairs of vertices which have an edge in between them. So we create an empty list of edges then iterate through the edge values associated with each of the vertices. A list is formed containing the distinct group of edges found from the vertices.
+* To **add a vertex**, we add another additional key to the graph dictionary.
+* To **add an edge** to an existing graph, we treat the new vertex as a tuple and validating if the edge is already present. If not then the edge is added.
 
-Commonly Asked Graph Interview Questions:
+Take a look at the following graph:
+
+![graph basics](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/graph_basics.jpg)
+
+In the above graph:
+
+```
+V = {a, b, c, d, e}
+E = {ab, ac, bd, cd, de}
+```
+
+```
+class graph:
+    def __init__(self,gdict=None):
+        if gdict is None:
+            gdict = []
+        self.gdict = gdict
+
+    # Get the keys of the dictionary
+    def getVertices(self):
+        return list(self.gdict.keys())
+
+    def edges(self):
+        return self.findedges()
+
+    # Find the distinct list of edges
+    def findedges(self):
+        edgename = []
+        for vrtx in self.gdict:
+            for nxtvrtx in self.gdict[vrtx]:
+                if {nxtvrtx, vrtx} not in edgename:
+                    edgename.append({vrtx, nxtvrtx})
+        return edgename
+
+    # Add the vertex as a key
+    def addVertex(self, vrtx):
+           if vrtx not in self.gdict:
+                self.gdict[vrtx] = []
+
+    # Add the new edge
+    def AddEdge(self, edge):
+        edge = set(edge)
+        (vrtx1, vrtx2) = tuple(edge)
+        if vrtx1 in self.gdict:
+            self.gdict[vrtx1].append(vrtx2)
+        else:
+            self.gdict[vrtx1] = [vrtx2]
+
+# Create the dictionary with graph elements
+graph_elements = { "a" : ["b","c"],
+                "b" : ["a", "d"],
+                "c" : ["a", "d"],
+                "d" : ["e"],
+                "e" : ["d"]
+                }
+
+g = graph(graph_elements)
+```
+
+**Commonly Asked Graph Interview Questions**:
 * Implement Breadth and Depth First Search:
   - [BFS](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Search-in-Python/bfs.py)
   - [DFS](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Search-in-Python/dfs.py)
@@ -547,7 +610,7 @@ dict.clear();     # remove all entries in dict
 del dict ;        # delete entire dictionary
 ```
 
-Commonly Asked Hashing Interview Questions:
+**Commonly Asked Hashing Interview Questions**:
 * Find symmetric pairs in an array
 * Trace complete path of a journey
 * Find if an array is a subset of another array
@@ -572,3 +635,5 @@ Here are [the tips for reading code](https://wiki.c2.com/?TipsForReadingCode):
 8. Write Unit Tests
 9. Comment the Code
 10. Clean up the Code
+
+[back to top](#technical-interview-prep)
