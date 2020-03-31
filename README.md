@@ -4,7 +4,7 @@ Here are the sections:
 * [How to Succeed in Data Structures and Algorithms Interview](#how-to-succeed-in-data-structures-and-algorithms-interview)
 * [Algorithms](#algorithms)
 * [Data Structures](#data-structures)
-* [Reading Code](#reading-code)
+* [Curated LeetCode Questions](#curated-leetcode-questions)
 
 These are the best online resources that I used while preparing for technical coding interviews:
 
@@ -707,20 +707,26 @@ del dict ;        # delete entire dictionary
 
 [back to top](#technical-interview-prep)
 
-## Reading Code
+## Curated LeetCode Questions
 
-As an engineer or scientist, significant time is spent reading code others have written. Our advice for you to understand code written by others is to read a lot of code and try to figure out its goal.
+### Array
+- [Two Sum](https://leetcode.com/problems/two-sum/)
+- [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
+- [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
 
-Here are [the tips for reading code](https://wiki.c2.com/?TipsForReadingCode):
-1. Build and Run the Program
-2. Find the High-Level Logic
-3. Draw Some Flowchart
-4. Examine Library Calls
-5. Search for Key Words
-6. Leverage the Power of Code Comprehension Tools
-7. Print the Code
-8. Write Unit Tests
-9. Comment the Code
-10. Clean up the Code
+### Graph
+- [Number of Islands](https://leetcode.com/problems/number-of-islands/)
+
+### String
+- [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
+- [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/submissions/)
+- [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
+- [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
+- [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/)
+
+### Tree
+- [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+- [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
+- [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
 
 [back to top](#technical-interview-prep)
