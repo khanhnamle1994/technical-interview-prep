@@ -788,6 +788,17 @@ Parallelism and concurrency are closely related concepts:
 
 Quickly analyzing large structured files is often difficult to do on standard spreadsheet applications. Therefore, it is useful to know how to use the Linux shell to perform such tasks. Read about useful shell commands for data handling in [this DataCamp page](https://www.datacamp.com/community/tutorials/shell-commands-data-scientist).
 
+- Count with `wc`.
+- Concatenate files with `cat`.
+- Modify a file with `sed`.
+- Subset a large file with `head` and `tail`.
+- Finding duplicates with `uniq`.
+- Selecting columns with `cut`.
+- Looping with `while true; do ... done` to process or transfer large number of files.
+- Create variables with `varname`.
+
+[back to top](#software-engineering)
+
 ### Managing access permissions
 
 In order to allow or restrict the use of files, the Linux shell can be used to set permissions on these files. Read about the chmod Linux command in [this Wikipedia article](https://en.wikipedia.org/wiki/Chmod). Also, take a look at [this short tutorial](https://www.howtoforge.com/tutorial/linux-chmod-command/) about Linux access permissions.
