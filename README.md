@@ -6,6 +6,7 @@ Here are the sections:
 * [Data Structures](#data-structures)
 * [Curated LeetCode Questions](#curated-leetcode-questions)
 * [Software Engineering](#software-engineering)
+* [System Design](#system-design)
 
 These are the best online resources that I used while preparing for technical coding interviews:
 
@@ -17,6 +18,8 @@ These are the best online resources that I used while preparing for technical co
 * [Interview Cake](https://www.interviewcake.com/): Another site that preps software engineering candidates for coding interview.
 
 ## How to Succeed in Data Structures and Algorithms Interview
+
+To practice your algorithmic coding, review [this interview preparation document](https://workera.ai/candidates/interview_prep/#h.skj5ir89g0z3).
 
 * [Preparation](#preparation)
 * [Understand the Problem](#understand-the-problem)
@@ -738,7 +741,6 @@ del dict ;        # delete entire dictionary
 * [Understanding the difference between concurrency and parallelism](#understanding-the-difference-between-concurrency-and-parallelism)
 * [Analyzing large files](#analyzing-large-files)
 * [Differentiate the stack from the heap](#differentiate-the-stack-from-the-heap)
-* [Making good software design decisions](#making-good-software-design-decisions)
 * [Differentiating Monolithic vs Microservices architectures](#differentiating-monolithic-vs-microservices-architectures)
 * [Understanding the role of the Hostname in a request](#understanding-the-role-of-the-hostname-in-a-request)
 * [Understanding classes and inheritance](#understanding-classes-and-inheritance)
@@ -826,13 +828,24 @@ The stack is the memory set aside as scratch space for a thread of execution. Th
 
 [back to top](#software-engineering)
 
-### Making good software design decisions
-
-When building software applications, it is important to make good design decisions. To practice your software design, review [this interview preparation document](https://workera.ai/candidates/interview_prep/#h.dxekc5ol5li).
-
 ### Differentiating Monolithic vs Microservices architectures
 
 Review a comparison between monolithic and microservices applications in [this video](https://www.coursera.org/lecture/uva-darden-continous-delivery-devops/microservices-vs-monoliths-tTnKW).
+
+|                      |                                       Monolithic                                      |                                 Microservice                                 |
+|:--------------------:|:-------------------------------------------------------------------------------------:|:----------------------------------------------------------------------------:|
+|         Size         |                               Single self-contained unit                              |               Very small function-oriented independent services              |
+|      Granularity     |                           Tightly coupled with low cohesion                           |                      Loosely coupled with high cohesion                      |
+|  Ease of Deployment  |                 Requires recreating and redeploying entire application                |             Each service can be built and deployed independently             |
+| Remote Call Overhead |                                        Low/None                                       |          High communication overhead due to increase in remote calls         |
+|  Speed of Deployment |                              Very slow deployment speeds                              |                        Rapid and continuous deployment                       |
+|      Persistence     |              All services in a monolithic application share data storage              |              Each service is free to choose its own data storage             |
+|  Ease of On-Boarding |                      Can be difficult to on-board new developers                      |                        Easy to on-board new developers                       |
+| Polyglot Programming |                           Utilize a single technology stack                           |             Can utilize a different technology stack per service             |
+| Communication Method |                           Language-level or procedure calls                           |        Communicates via API layer with lightweight protocols like REST       |
+|      Scalability     | Horizontally scalable, can be very challenging to scale as application becomes larger | Vertically and horizontally scalable through use of containers and the cloud |
+
+[back to top](#software-engineering)
 
 ### Understanding the role of the Hostname in a request
 
@@ -855,3 +868,7 @@ The SOLID principles of Object-Oriented Design are guidelines for writing clean 
 Continuous integration is one of the strategies to increase development speed and reduce time to market. Review the concept of continuous integration in [this video](https://www.coursera.org/lecture/devops-culture-and-mindset/configuration-management-continuous-integration-testing-and-delivery-8YCtX) (min 2:59). If you prefer reading, you can check [this Wikipedia article](https://en.wikipedia.org/wiki/Continuous_integration).
 
 [back to top](#technical-interview-prep)
+
+## System Design
+
+When building software applications, it is important to make good design decisions. To practice your software design, review [this interview preparation document](https://workera.ai/candidates/interview_prep/#h.dxekc5ol5li).
