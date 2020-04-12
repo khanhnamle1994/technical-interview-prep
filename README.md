@@ -754,9 +754,35 @@ Race conditions affect the correctness of concurrent programs. Learn about race 
 - A **race condition** means that the correctness of the program (the satisfaction of postconditions and invariants) depends on the relative timing of events in concurrent computations A and B. When this happens, we say “A is in a race with B.”
 - Some inter-leavings of events may be OK, in the sense that they are consistent with what a single, non-concurrent process would produce, but other inter-leavings produce wrong answers – violating postconditions or invariants.
 
+[back to top](#software-engineering)
+
 ### Understanding the difference between concurrency and parallelism
 
 Concurrency and parallelism are fundamental concepts in software engineering. Learn about the differences between these two concepts in [this video](https://www.coursera.org/lecture/parprog1/introduction-to-parallel-computing-zNrIS) (minute 6:32). You can read about concurrency in [this Wikipedia article](https://en.wikipedia.org/wiki/Concurrent_computing) and [this MIT page](https://web.mit.edu/6.005/www/fa14/classes/17-concurrency/#reading_17_concurrency). Also, you can read about parallelism in [this Wikipedia article](https://en.wikipedia.org/wiki/Parallel_computing).
+
+- **Parallelism** is a type of computation in which many calculations are performed at the same time.
+  - Basic principle: computation can be divided into smaller subproblems, each of which can be solved simultaneously.
+  - Assumption: we have parallel hardware at our disposal, which is capable of executing these computations in parallel.
+
+- **Why Parallelism?**
+  - Parallel programming is much harder than sequential programming. Separating sequential computations into parallel subcomputations can be challenging, or even impossible.
+  - Ensuring program correctness is more difficult, due to new types of errors.
+  - *Speedup* is the only reason why we bother paying for this complexity.
+
+- **Concurrency** means multiple computations are happening at the same time. Concurrency is everywhere in modern programming, whether we like it or not:
+  - (1) Multiple computers in a network,
+  - (2) Multiple applications running on one computer,
+  - (3) Multiple processors in a computer (today, often multiple processor cores on a single chip)
+- In fact, concurrency is essential in modern programming:
+  - Web sites must handle multiple simultaneous users.
+  - Mobile apps need to do some of their processing on servers (“in the cloud”).
+  - Graphical user interfaces almost always require background work that does not interrupt the user. For example, Eclipse compiles your Java code while you’re still editing it.
+
+Parallelism and concurrency are closely related concepts:
+- Parallel program uses parallel hardware to execute computation more quickly. Efficiency is its main concern.
+- Concurrent program may or may not execute multiple executions at the same time. Improves modularity, responsiveness or maintainability.
+
+[back to top](#software-engineering)
 
 ### Analyzing large files
 
