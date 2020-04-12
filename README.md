@@ -737,7 +737,6 @@ del dict ;        # delete entire dictionary
 * [Understanding race conditions](#understanding-race-conditions)
 * [Understanding the difference between concurrency and parallelism](#understanding-the-difference-between-concurrency-and-parallelism)
 * [Analyzing large files](#analyzing-large-files)
-* [Managing access permissions](#managing-access-permissions)
 * [Differentiate the stack from the heap](#differentiate-the-stack-from-the-heap)
 * [Making good software design decisions](#making-good-software-design-decisions)
 * [Differentiating Monolithic vs Microservices architectures](#differentiating-monolithic-vs-microservices-architectures)
@@ -764,7 +763,7 @@ Concurrency and parallelism are fundamental concepts in software engineering. Le
   - Basic principle: computation can be divided into smaller subproblems, each of which can be solved simultaneously.
   - Assumption: we have parallel hardware at our disposal, which is capable of executing these computations in parallel.
 
-- **Why Parallelism?**
+- Why Parallelism?
   - Parallel programming is much harder than sequential programming. Separating sequential computations into parallel subcomputations can be challenging, or even impossible.
   - Ensuring program correctness is more difficult, due to new types of errors.
   - *Speedup* is the only reason why we bother paying for this complexity.
@@ -799,13 +798,33 @@ Quickly analyzing large structured files is often difficult to do on standard sp
 
 [back to top](#software-engineering)
 
-### Managing access permissions
-
-In order to allow or restrict the use of files, the Linux shell can be used to set permissions on these files. Read about the chmod Linux command in [this Wikipedia article](https://en.wikipedia.org/wiki/Chmod). Also, take a look at [this short tutorial](https://www.howtoforge.com/tutorial/linux-chmod-command/) about Linux access permissions.
-
 ### Differentiate the stack from the heap
 
 The stack is the memory set aside as scratch space for a thread of execution. The heap is memory set aside for dynamic allocation. Read [this thread](https://stackoverflow.com/questions/79923/what-and-where-are-the-stack-and-heap#comment67326550_80113) for more information.
+
+- The **stack** is the memory set aside as scratch space for a thread of execution.
+  - When a function is called, a block is reserved on the top of the stack for local variables and some bookkeeping data. When that function returns, the block becomes unused and can be used the next time a function is called.
+  - The stack is always reserved in a LIFO (last in first out) order; the most recently reserved block is always the next block to be freed. This makes it really simple to keep track of the stack; freeing a block from the stack is nothing more than adjusting one pointer.
+- The **heap** is memory set aside for dynamic allocation.
+  - Unlike the stack, there's no enforced pattern to the allocation and deallocation of blocks from the heap; you can allocate a block at any time and free it at any time.
+  - This makes it much more complex to keep track of which parts of the heap are allocated or free at any given time; there are many custom heap allocators available to tune heap performance for different usage patterns.
+- Each thread gets a stack, while there's typically only one heap for the application (although it isn't uncommon to have multiple heaps for different types of allocation).
+
+- *To what extent are they controlled by the OS or language runtime?*
+  - The OS allocates the stack for each system-level thread when the thread is created.
+  - Typically the OS is called by the language runtime to allocate the heap for the application.
+- *What is their scope?*
+  - The stack is attached to a thread, so when the thread exits the stack is reclaimed.
+  - The heap is typically allocated at application startup by the runtime, and is reclaimed when the application (technically process) exits.
+- *What determines the size of each of them?*
+  - The size of the stack is set when a thread is created.
+  - The size of the heap is set on application startup, but can grow as space is needed (the allocator requests more memory from the operating system).
+- *What makes one faster?*
+  - The stack is faster because the access pattern makes it trivial to allocate and deallocate memory from it (a pointer/integer is simply incremented or decremented), while the heap has much more complex bookkeeping involved in an allocation or deallocation.
+  - Also, each byte in the stack tends to be reused very frequently which means it tends to be mapped to the processor's cache, making it very fast.
+  - Another performance hit for the heap is that the heap, being mostly a global resource, typically has to be multi-threading safe, i.e. each allocation and deallocation needs to be - typically - synchronized with "all" other heap accesses in the program.
+
+[back to top](#software-engineering)
 
 ### Making good software design decisions
 
