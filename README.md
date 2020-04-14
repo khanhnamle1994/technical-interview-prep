@@ -755,7 +755,7 @@ Race conditions affect the correctness of concurrent programs. Learn about race 
 - A **race condition** means that the correctness of the program (the satisfaction of postconditions and invariants) depends on the relative timing of events in concurrent computations A and B. When this happens, we say “A is in a race with B.”
 - Some inter-leavings of events may be OK, in the sense that they are consistent with what a single, non-concurrent process would produce, but other inter-leavings produce wrong answers – violating postconditions or invariants.
 
-[back to top](#software-engineering)
+[back to current section](#software-engineering)
 
 ### Understanding the difference between concurrency and parallelism
 
@@ -783,7 +783,7 @@ Parallelism and concurrency are closely related concepts:
 - Parallel program uses parallel hardware to execute computation more quickly. Efficiency is its main concern.
 - Concurrent program may or may not execute multiple executions at the same time. Improves modularity, responsiveness or maintainability.
 
-[back to top](#software-engineering)
+[back to current section](#software-engineering)
 
 ### Analyzing large files
 
@@ -798,7 +798,7 @@ Quickly analyzing large structured files is often difficult to do on standard sp
 - Looping with `while true; do ... done` to process or transfer large number of files.
 - Create variables with `varname`.
 
-[back to top](#software-engineering)
+[back to current section](#software-engineering)
 
 ### Differentiate the stack from the heap
 
@@ -826,7 +826,7 @@ The stack is the memory set aside as scratch space for a thread of execution. Th
   - Also, each byte in the stack tends to be reused very frequently which means it tends to be mapped to the processor's cache, making it very fast.
   - Another performance hit for the heap is that the heap, being mostly a global resource, typically has to be multi-threading safe, i.e. each allocation and deallocation needs to be - typically - synchronized with "all" other heap accesses in the program.
 
-[back to top](#software-engineering)
+[back to current section](#software-engineering)
 
 ### Differentiating Monolithic vs Microservices architectures
 
@@ -845,11 +845,16 @@ Review a comparison between monolithic and microservices applications in [this v
 | Communication Method |                           Language-level or procedure calls                           |        Communicates via API layer with lightweight protocols like REST       |
 |      Scalability     | Horizontally scalable, can be very challenging to scale as application becomes larger | Vertically and horizontally scalable through use of containers and the cloud |
 
-[back to top](#software-engineering)
+[back to current section](#software-engineering)
 
 ### Understanding the role of the Hostname in a request
 
 Review the role and definition of a hostname in [this wikipedia page](https://en.wikipedia.org/wiki/Hostname).
+
+- In the Internet, a hostname is a domain name assigned to a host computer. This is usually a combination of the host's local name with its parent domain's name. For example, `en.wikipedia.org` consists of a local hostname (`en`) and the domain name `wikipedia.org`. This kind of hostname is translated into an IP address via the local hosts file, or the Domain Name System (DNS) resolver. It is possible for a single host computer to have several hostnames; but generally the operating system of the host prefers to have one hostname that the host uses for itself.
+- Any domain name can also be a hostname, as long as the restrictions mentioned below are followed. So, for example, both `en.wikipedia.org` and `wikipedia.org` are hostnames because they both have IP addresses assigned to them. A hostname may be a domain name, if it is properly organized into the domain name system. A domain name may be a hostname if it has been assigned to an Internet host and associated with the host's IP address.
+
+[back to current section](#software-engineering)
 
 ### Understanding classes and inheritance
 
