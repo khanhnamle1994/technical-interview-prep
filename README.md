@@ -860,6 +860,31 @@ Review the role and definition of a hostname in [this wikipedia page](https://en
 
 Learn about classes in [this video](https://www.coursera.org/lecture/python-databases/14-2-our-first-class-and-object-MI9uq). Learn about inheritance in [this video](https://www.coursera.org/lecture/intermediate-object-oriented-programming-unity-games/what-is-inheritance-Z2t3M).
 
+**What are classes?**
+
+```
+# This is the template for making PartyAnimal objects, where "class" is a reserved word
+class PartyAnimal:
+  x = 0 # Each PartyAnimal object has a bit of data
+
+  # Each PartyAnimal object has a bit of code
+  def party(self):
+    self.x = self.x + 1
+    print("So far", self.x)
+
+# Construct a PartyAnimal object and store in "an" variable
+an = PartyAnimal()
+
+# Tell the "an" object to run the party() code within it (equivalent to PartyAnimal.party(an))
+an.party()
+```
+
+**What is inheritance?**
+- A way to structure our code so multiple classes can share common fields, properties, and methods.
+- Classes can still have class-specific data and operations as well.
+
+[back to current section](#software-engineering)
+
 ### Understanding the purpose of different HTTP requests
 
 Review the purpose of different HTTP requests (also known as methods or verbs) in [this Mozilla Web Docs page](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods). These indicate the desired action to be performed for a given resource.
