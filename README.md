@@ -746,7 +746,7 @@ del dict ;        # delete entire dictionary
 * [Understanding classes and inheritance](#understanding-classes-and-inheritance)
 * [Understanding the purpose of different HTTP requests](#understanding-the-purpose-of-different-HTTP-requests)
 * [Understanding the single responsibility principle](#understanding-the-single-responsibility-principle)
-* [Understanding the benefits of continuous integration](#understanding-the-benefits-of-continous-integration)
+* [Understanding the benefits of continuous integration](#understanding-the-benefits-of-continuous-integration)
 
 ### Understanding race conditions
 
@@ -905,9 +905,18 @@ Review the purpose of different HTTP requests (also known as methods or verbs) i
 
 The SOLID principles of Object-Oriented Design are guidelines for writing clean code. You can learn more about the single responsibility principle in [this Wikipedia article](https://en.wikipedia.org/wiki/Single_responsibility_principle). Also, you can find a more elaborate explanation of this principle in [this blog post](https://blog.cleancoder.com/uncle-bob/2014/05/08/SingleReponsibilityPrinciple.html).
 
+- The Single Responsibility Principle (SRP) states that each software module should have one and only one reason to change.
+- When you write a software module, you want to make sure that when changes are requested, those changes can only originate from a single person, or rather, a single tightly coupled group of people representing a single narrowly defined business function. You want to isolate your modules from the complexities of the organization as a whole, and design your systems such that each module is responsible (responds to) the needs of just that one business function.
+- Another wording for the Single Responsibility Principle is: **Gather together the things that change for the same reasons. Separate those things that change for different reasons.**
+- If you think about this you’ll realize that this is just another way to define cohesion and coupling. We want to increase the cohesion between things that change for the same reasons, and we want to decrease the coupling between those things that change for different reasons.
+
+[back to current section](#software-engineering)
+
 ### Understanding the benefits of continuous integration
 
 Continuous integration is one of the strategies to increase development speed and reduce time to market. Review the concept of continuous integration in [this video](https://www.coursera.org/lecture/devops-culture-and-mindset/configuration-management-continuous-integration-testing-and-delivery-8YCtX) (min 2:59). If you prefer reading, you can check [this Wikipedia article](https://en.wikipedia.org/wiki/Continuous_integration).
+
+[back to current section](#software-engineering)
 
 [back to top](#technical-interview-prep)
 
