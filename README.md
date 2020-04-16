@@ -916,6 +916,14 @@ The SOLID principles of Object-Oriented Design are guidelines for writing clean 
 
 Continuous integration is one of the strategies to increase development speed and reduce time to market. Review the concept of continuous integration in [this video](https://www.coursera.org/lecture/devops-culture-and-mindset/configuration-management-continuous-integration-testing-and-delivery-8YCtX) (min 2:59). If you prefer reading, you can check [this Wikipedia article](https://en.wikipedia.org/wiki/Continuous_integration).
 
+- In continuous integration:
+  - Work in small batches and build quality in.
+  - Keep branches short-lived and integrate them into trunk frequently.
+  - The first priority is to solve the problem.
+- Closely related concepts are **continuous testing** and **continous delivery**:
+  - In CT: Testing is an ongoing development process. Engineers run automated unit and acceptance tests against every commit to version control. This gives them fast feedback on their changes.
+  - Implementing CD means creating multiple feedback loops to ensure that high-quality software gets delivered to users more frequently and more reliably.
+
 [back to current section](#software-engineering)
 
 [back to top](#technical-interview-prep)
