@@ -713,25 +713,46 @@ del dict ;        # delete entire dictionary
 
 ## Curated LeetCode Questions
 
+This great list of top 75 LeetCode questions came from [Team Blind](https://www.teamblind.com/post/New-Year-Gift---Curated-List-of-Top-75-LeetCode-Questions-to-Save-Your-Time-OaM1orEU).
+
 ### Array
-- [Two Sum](https://leetcode.com/problems/two-sum/)
-- [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)
-- [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+- [Two Sum](https://leetcode.com/problems/two-sum/) (Easy)
+- [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) (Medium)
+- [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) (Medium)
+
+### Binary
+- [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/) (Easy)
+
+### Dynamic Programming
+- [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) (Easy)
 
 ### Graph
-- [Number of Islands](https://leetcode.com/problems/number-of-islands/)
+- [Course Schedule](https://leetcode.com/problems/course-schedule/) (Medium)
+- [Number of Islands](https://leetcode.com/problems/number-of-islands/) (Medium)
+
+### Interval
+- [Merge Intervals](https://leetcode.com/problems/merge-intervals/) (Medium)
+
+### Linked List
+- [Remove Nth Node From End Of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) (Medium)
+
+### Matrix
+- [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) (Medium)
 
 ### String
-- [Valid Anagram](https://leetcode.com/problems/valid-anagram/)
-- [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/submissions/)
-- [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
-- [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/)
-- [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/)
+- [Valid Anagram](https://leetcode.com/problems/valid-anagram/) (Easy)
+- [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/submissions/) (Easy)
+- [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) (Easy)
+- [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) (Medium)
+- [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/) (Medium)
 
 ### Tree
-- [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
-- [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
-- [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/)
+- [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) (Easy)
+- [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/) (Medium)
+- [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) (Medium)
+
+### Heap
+- [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) (Medium)
 
 [back to top](#technical-interview-prep)
 
