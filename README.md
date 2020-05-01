@@ -170,14 +170,7 @@ Here are the algorithms:
 
 **Time Complexities of All Sorting Algorithms**
 
-|    Algorithm   | Best Complexity | Average Complexity | Worst Complexity |
-|:--------------:|:---------------:|:------------------:|:----------------:|
-|   Bubble Sort  |       O(n)      |       O(n^2)       |      O(n^2)      |
-| Selection Sort |      O(n^2)     |       O(n^2)       |      O(n^2)      |
-| Insertion Sort |       O(n)      |       O(n^2)       |      O(n^2)      |
-|    Heap Sort   |    O(n logn)    |      O(n logn)     |     O(n logn)    |
-|   Merge Sort   |    O(n logn)    |      O(n logn)     |     O(n logn)    |
-|   Quick Sort   |    O(n logn)    |      O(n logn)     |      O(n^2)      |
+![Sorting-Comparisons](assets/Sorting-Comparison.png)
 
 [back to current section](#algorithms)
 
@@ -324,6 +317,7 @@ Here are [the most commonly used data structures](https://www.freecodecamp.org/n
 5. [Trees](#trees)
 6. [Graphs](#graphs)
 7. [Hash Tables](#hash-tables)
+8. [Comparisons](#comparisons)
 
 ### Arrays
 
@@ -709,6 +703,12 @@ del dict ;        # delete entire dictionary
 
 [back to current section](#data-structures)
 
+### Comparisons
+
+![Data-Structures-Comparison](assets/Data-Structures-Comparison.png)
+
+[back to current section](#data-structures)
+
 [back to top](#technical-interview-prep)
 
 ## Curated LeetCode Questions
@@ -717,6 +717,11 @@ This great list of top 75 LeetCode questions came from [Team Blind](https://www.
 
 ### Array
 - [Two Sum](https://leetcode.com/problems/two-sum/) (Easy)
+- [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) (Easy)
+- [Contains Duplicate](https://leetcode.com/problems/contains-duplicate/) (Easy)
+- [Product of Array Except Self](https://leetcode.com/problems/product-of-array-except-self/) (Medium)
+- [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) (Easy)
+- [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) (Medium)
 - [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) (Medium)
 - [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) (Medium)
 
