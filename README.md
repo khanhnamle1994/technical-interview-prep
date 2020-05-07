@@ -724,6 +724,7 @@ This great list of top 75 LeetCode questions came from [Team Blind](https://www.
 - [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/) (Medium)
 - [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/) (Medium)
 - [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/) (Medium)
+- [Container With Most Water](https://leetcode.com/problems/container-with-most-water/) (Medium)
 
 ### Binary
 - [Sum of Two Integers](https://leetcode.com/problems/sum-of-two-integers/) (Easy)
@@ -748,11 +749,14 @@ This great list of top 75 LeetCode questions came from [Team Blind](https://www.
 - [Valid Anagram](https://leetcode.com/problems/valid-anagram/) (Easy)
 - [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/submissions/) (Easy)
 - [Valid Palindrome](https://leetcode.com/problems/valid-palindrome/) (Easy)
+- [Group Anagrams](https://leetcode.com/problems/group-anagrams/) (Medium)
 - [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) (Medium)
 - [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/) (Medium)
+- [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) (Medium)
 
 ### Tree
 - [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) (Easy)
+- [Invert Binary Tree](https://leetcode.com/problems/invert-binary-tree/) (Easy)
 - [Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/) (Medium)
 - [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) (Medium)
 
