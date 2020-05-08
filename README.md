@@ -369,7 +369,10 @@ Basic Operations on Arrays:
 
 ### Stacks
 
-A real-life example of Stack could be a pile of books placed in a vertical order. In order to get the book that’s somewhere in the middle, you will need to remove all the books placed on top of it. This is how the LIFO (Last In First Out) method works.
+- A real-life example of Stack could be a pile of books placed in a vertical order. In order to get the book that’s somewhere in the middle, you will need to remove all the books placed on top of it. This is how the LIFO (Last In First Out) method works.
+- Stacks are often implemented by using a linked list! Because they can only “grow” in one direction — that is to say, they only allow us to add and remove elements through a single place — they lend themselves easily to behaving exactly like *singly linked lists*.
+- If we remember the characteristics of a linked list, we’ll recall that they have a head node, and that the space time complexity of adding elements to the beginning of the linked list is O(1), or *constant time*. That’s really nice, because no matter how big our stack might get, since we’re only adding and removing from the top (our head node), we can perform that single operation in relatively the same amount of time, even with a large stack.
+- What happens when you implement a stack using an array as our data structure? Well, if we try to add more elements to our stack than our array has space for…things turn real bad, real fast. Our stack won’t prevent us from adding another element (since it thinks that it can grow as large as it wants), but the array that’s implementing the stack won’t have the space that’s required to allocate enough memory to the new element that we’re adding! All of this leads to — you guessed it — a *stack overflow*!
 
 Here’s an image of stack containing three data elements (1, 2 and 3), where 3 is at the top and will be removed first:
 
@@ -416,9 +419,12 @@ class Stack:
 
 ### Queues
 
-Similar to Stack, Queue is another linear data structure that stores the element in a sequential manner. The only significant difference between Stack and Queue is that instead of using the LIFO method, Queue implements the FIFO method, which is short for First in First Out.
-
-A perfect real-life example of Queue: a line of people waiting at a ticket booth. If a new person comes, they will join the line from the end, not from the start — and the person standing at the front will be the first to get the ticket and hence leave the line.
+- Similar to Stack, Queue is another linear data structure that stores the element in a sequential manner. The only significant difference between Stack and Queue is that instead of using the LIFO method, Queue implements the FIFO method, which is short for First in First Out.
+- A perfect real-life example of Queue: a line of people waiting at a ticket booth. If a new person comes, they will join the line from the end, not from the start — and the person standing at the front will be the first to get the ticket and hence leave the line.
+- Arrays can be very powerful when we know the size of our data structure ahead of time. But there a many times (in particular with queues) when we don’t really know how big our queue is going to get. So what happens when we have to enqueue an element? Well, if we don’t know the queue size beforehand and we’re using an array, it’s probable that sooner rather than later, we’ll run out of allocated memory and space. So, we’ll need to copy over the contents of our array and then allocate more space and memory, and then enqueue a new element onto the end of the queue.
+- But there’s yet another added complexity with array-based queue implementations: we need to be able to enqueue at the back of the array, and dequeue from the front — which isn’t always terrible because accessing the first or last element in an array doesn’t take too much time, but it’s not as simple as with stacks, where the adding and removing of elements all happens from one end of the structure. As our array grows, we’ll need to be able to access one end and the other, and the space time complexity will grow as a result.
+- We can implement the queue with a *linked list*. We don’t need to worry about the queue size ahead of time, since memory can be distributed and the linked list implementation of our queue can grow dynamically (just as long as we don’t use all of our computer’s memory).
+- Enqueuing and dequeuing gets to be a lot easier, because we can simply find an empty space in memory, add a node with a reference to it’s next neighbor. No need to copy and recreate our queue like we had to with an array implementation. And, if we add pointer references to the beginning and end of our list, we don’t need to traverse the entire structure to enqueue or dequeue an element, either!
 
 Here’s an image of Queue containing four data elements (1, 2, 3 and 4), where 1 is at the top and will be removed first:
 
@@ -463,12 +469,9 @@ class Queue:
 [back to current section](#data-structures)
 
 ### Linked Lists
-
-A linked list is another important linear data structure which might look similar to arrays at first but differs in memory allocation, internal structure and how basic operations of insertion and deletion are carried out.
-
-A linked list is like a chain of nodes, where each node contains information like data and a pointer to the succeeding node in the chain. There’s a head pointer, which points to the first element of the linked list, and if the list is empty then it simply points to null or nothing.
-
-Linked lists are used to implement file systems, hash tables, and adjacency lists.
+- A linked list is another important linear data structure which might look similar to arrays at first but differs in memory allocation, internal structure and how basic operations of insertion and deletion are carried out.
+- A linked list is like a chain of nodes, where each node contains information like data and a pointer to the succeeding node in the chain. There’s a head pointer, which points to the first element of the linked list, and if the list is empty then it simply points to null or nothing.
+- Linked lists are used to implement file systems, hash tables, and adjacency lists.
 
 Here’s a visual representation of the internal structure of a linked list:
 
@@ -485,6 +488,10 @@ Basic Operations of Linked List:
 * **DeleteAtHead** — Deletes first element of the linked list: O(1)
 * **Search** — Returns the given element from a linked list: O(n)
 * **isEmpty** — Returns true if the linked list is empty: O(1)
+
+A good rule of thumb for remember the characteristics of linked lists is this: **a linked list is usually efficient when it comes to adding and removing most elements, but can be very slow to search and find a single element.**
+- If you ever find yourself having to do something that requires a lot of traversal, iteration, or quick index-level access, a linked list could be your worst enemy. In those situations, an *array* might be a better solution, since you can find things quickly (a single chunk of allocated memory), and you can use an index to quickly retrieve a random element in the middle or end of the list without having to take the time to traverse through the whole entire thing.
+- However, if you find yourself wanting to add a bunch of elements to a list and aren’t worried about finding elements again later, or if you know that you won’t need to traverse through the entirety of the list, a linked list could be your new best friend.
 
 **Commonly Asked Linked List Interview Questions**:
 * Reverse a linked list
