@@ -503,9 +503,24 @@ A good rule of thumb for remember the characteristics of linked lists is this: *
 
 ### Trees
 
-A tree is a hierarchical data structure consisting of vertices (nodes) and edges that connect them. Trees are similar to graphs, but the key point that differentiates a tree from the graph is that a cycle cannot exist in a tree.
-
-Trees are extensively used in Artificial Intelligence and complex algorithms to provide an efficient storage mechanism for problem-solving.
+- A tree is a hierarchical data structure consisting of vertices (nodes) and edges that connect them. Trees are similar to graphs, but the key point that differentiates a tree from the graph is that a cycle cannot exist in a tree.
+- Trees are extensively used in Artificial Intelligence and complex algorithms to provide an efficient storage mechanism for problem-solving.
+- Here are some good terms to know when it comes to talking about trees:
+  - **Root**: the topmost node of the tree, which never has any links or edges connecting to it
+  - **Link/Edge**: the reference that a parent node contains that tells it what its child node is
+  - **Child**: any node that has a parent node that links to it
+  - **Parent**: any node that has a reference or link to another node
+  - **Sibling**: any group of nodes that are the children of the same node
+  - **Internal**: any node that has a child node (basically all parent nodes)
+  - **Leaf**: any node that does not have a child node in the tree
+- *If a tree has n nodes, it will always have one less number of edges (n-1).*
+- Trees are *recursive data structures* because a tree is usually composed of smaller trees — often referred to as subtrees — inside of it. The child of one node in a tree could very well be the parent of another tree (making it the root node of a subtree). This can be really interesting when it comes to writing algorithms to traverse or search through a tree, since the nesting of trees can sometimes lead us to writing recursive search algorithms.
+- For the most part, the two properties that we will be the most concerned with are either the depth of a node or the height of a node.
+  - A simple way to think about the **depth** of a node is by answering the question: how far away is the node from the root of the tree?
+  - The **height** of a node can be simplified by asking the question: how far is this node from its furthest-away leaf?
+- The reason that depth and height are so important is because they tell us a lot about what a tree looks like, right off the bat. And the thing about trees is that they can all look different. One quick example of this is balanced trees versus unbalanced trees.
+  - A tree is considered to be **balanced** if any two sibling subtrees do not differ in height by more than one level.
+  - However, if two sibling subtrees differ significantly in height (and have more than one level of depth of difference), the tree is **unbalanced**.
 
 Here’s an image of a simple tree, and basic terminologies used in tree data structure:
 
