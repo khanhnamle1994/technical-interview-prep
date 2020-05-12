@@ -762,7 +762,10 @@ This great list of top 75 LeetCode questions came from [Team Blind](https://www.
 - [Merge Intervals](https://leetcode.com/problems/merge-intervals/) (Medium)
 
 ### Linked List
+- [Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/) (Easy)
 - [Remove Nth Node From End Of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) (Medium)
+- [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) (Easy)
+- [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) (Easy)
 
 ### Matrix
 - [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) (Medium)
@@ -775,6 +778,7 @@ This great list of top 75 LeetCode questions came from [Team Blind](https://www.
 - [Longest Palindromic Substring](https://leetcode.com/problems/longest-palindromic-substring/) (Medium)
 - [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/) (Medium)
 - [Longest Substring Without Repeating Characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/) (Medium)
+- [Longest Repeating Character Replacement](https://leetcode.com/problems/longest-repeating-character-replacement/) (Medium)
 
 ### Tree
 - [Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) (Easy)
