@@ -753,6 +753,9 @@ This great list of top 75 LeetCode questions came from [Team Blind](https://www.
 
 ### Dynamic Programming
 - [Climbing Stairs](https://leetcode.com/problems/climbing-stairs/) (Easy)
+- [Coin Change](https://leetcode.com/problems/coin-change/) (Medium)
+- [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) (Medium)
+- [Word Break](https://leetcode.com/problems/word-break/) (Medium)
 
 ### Graph
 - [Course Schedule](https://leetcode.com/problems/course-schedule/) (Medium)
