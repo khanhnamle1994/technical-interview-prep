@@ -756,6 +756,8 @@ This great list of top 75 LeetCode questions came from [Team Blind](https://www.
 - [Coin Change](https://leetcode.com/problems/coin-change/) (Medium)
 - [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/) (Medium)
 - [Word Break](https://leetcode.com/problems/word-break/) (Medium)
+- [Combination Sum](https://leetcode.com/problems/combination-sum-iv/) (Medium)
+- [House Robber](https://leetcode.com/problems/house-robber/) (Easy)
 
 ### Graph
 - [Course Schedule](https://leetcode.com/problems/course-schedule/) (Medium)
