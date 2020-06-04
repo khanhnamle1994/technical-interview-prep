@@ -758,6 +758,7 @@ This great list of top 75 LeetCode questions came from [Team Blind](https://www.
 - [Word Break](https://leetcode.com/problems/word-break/) (Medium)
 - [Combination Sum](https://leetcode.com/problems/combination-sum-iv/) (Medium)
 - [House Robber](https://leetcode.com/problems/house-robber/) (Easy)
+- [Decode Ways](https://leetcode.com/problems/decode-ways/) (Medium)
 
 ### Graph
 - [Course Schedule](https://leetcode.com/problems/course-schedule/) (Medium)
@@ -792,6 +793,7 @@ This great list of top 75 LeetCode questions came from [Team Blind](https://www.
 - [Kth Smallest Element in a BST](https://leetcode.com/problems/kth-smallest-element-in-a-bst/) (Medium)
 
 ### Heap
+- [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) (Hard)
 - [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) (Medium)
 
 [back to top](#technical-interview-prep)
