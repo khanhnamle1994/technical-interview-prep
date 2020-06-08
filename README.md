@@ -538,12 +538,16 @@ The following are the types of trees:
 Out of the above, Binary Tree and Binary Search Tree are the most commonly used trees.
 
 A **binary tree** is a non linear data structure where each node can have at most 2 child nodes.
+
 ![](assets/binary-tree.png)
+
 - If a node have 0 child nodes then it is called a leaf node. In the above image {2,5,11,4} are the leaf nodes.
 - The worst case complexity for searching a node is O(n).
 
 **Binary search tree** is a binary tree in which a node have a value greater than all values in its left subtree and smaller than all values in its right subtree.
+
 ![](assets/binary-search-tree.png)
+
 - If a Binary search tree is balanced then you can find a value in O(log n) time.
 - Let's say we want to find node 12:
   - We will start from the root node which in this case is 15.
@@ -685,12 +689,26 @@ g = graph(graph_elements)
 
 Hashing is a process used to uniquely identify objects and store each object at some pre-calculated unique index called its “key.” So, the object is stored in the form of a “key-value” pair, and the collection of such items is called a “dictionary.” Each object can be searched using that key. There are different data structures based on hashing, but the most commonly used data structure is the **hash table**.
 
-Hash tables are generally implemented using arrays. Its search, insert, and delete operations all take O(1) average complexity and O(n) worst complexity.
+Hash tables are made up of two distinct parts: **an array** (which is the actual table where the data will be stored) and **a hash function** (which is responsible for taking input data and creating a mapping by assigning it a very specific index in the array). Its search, insert, and delete operations all take O(1) average complexity and O(n) worst complexity.
+
+What makes a good hash table?
+- **It should be easy to compute**. Hard-to-compute hash functions mean that we lose any gained advantages for quick and efficient lookup time!
+- **It should avoid collision**. Collisions are unavoidable but the more collisions, the harder it is to come up with a fast, efficient algorithm for resolving them!
+- **It should use all the input data, and always return the same key for the same hash bucket per value**. If a hash function doesn't always return the same value for any given input, we'll never be able to reliably access data from it!
 
 The performance of hashing data structure depends upon these three factors:
-* Hash Function: A function that maps a big number or string to a small integer that can be used as the index in the hash table.
-* Size of the Hash Table: Changing the size of the hash table will change the compression function, leading to the keys being allotted to different buckets.
-* Collision Handling Method: Hash function may return the same hash value for 2 or more keys (collision). We can resolve this problem either via separate chaining or open addressing.
+- **Hash Function**: A function that maps a big number or string to a small integer that can be used as the index in the hash table.
+- **Size of the Hash Table**: Changing the size of the hash table will change the compression function, leading to the keys being allotted to different buckets.
+- **Collision Handling Method**: Hash function may return the same hash value for 2 or more keys (collision). We can resolve this problem either via separate chaining or open addressing.
+
+The two most common collisions resolution tactics are:
+- **Linear Probing**:
+  - If a hash function encounters a collision, it can resolve it by finding the next available hash bucket for the data, and effectively probing through the table until it finds an empty space.
+  - The downside to linear probing is its tendency for clustering. A poorly-designed hash table will "cluster" a majority of its input data into only a few hash buckets. If the hash bucket at the next key is also not available, the hash function loops back through the table.
+- **Chaining**:
+  - If a hash function encounters a collision, it can resolve it by using a linked list to store a collection of data at one hash bucket key, meaning that it can simply chain on more data to the same slot in the hash table.
+  - The downside to chaining is that it takes more time to search with more items at one location - O(n) - where n is the number of items in the hash bucket.
+  - With a good hash function, chaining still averages out to have a search time of O(1).
 
 Here’s an illustration of how the hash is mapped in an array. The index of this array is calculated through a Hash Function.
 
