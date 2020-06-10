@@ -776,7 +776,10 @@ This great list of top 75 LeetCode questions came from [Team Blind](https://www.
 - [Word Break](https://leetcode.com/problems/word-break/) (Medium)
 - [Combination Sum](https://leetcode.com/problems/combination-sum-iv/) (Medium)
 - [House Robber](https://leetcode.com/problems/house-robber/) (Easy)
+- [House Robber II](https://leetcode.com/problems/house-robber-ii/) (Medium)
 - [Decode Ways](https://leetcode.com/problems/decode-ways/) (Medium)
+- [Unique Paths](https://leetcode.com/problems/unique-paths/) (Medium)
+- [Jump Game](https://leetcode.com/problems/jump-game/) (Medium)
 
 ### Graph
 - [Course Schedule](https://leetcode.com/problems/course-schedule/) (Medium)
