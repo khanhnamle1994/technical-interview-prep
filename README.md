@@ -317,7 +317,8 @@ Here are [the most commonly used data structures](https://www.freecodecamp.org/n
 5. [Trees](#trees)
 6. [Graphs](#graphs)
 7. [Hash Tables](#hash-tables)
-8. [Comparisons](#comparisons)
+8. [Set](#set)
+9. [Comparisons](#comparisons)
 
 ### Arrays
 
@@ -740,6 +741,32 @@ del dict ;        # delete entire dictionary
 * Trace complete path of a journey
 * Find if an array is a subset of another array
 * Check if given arrays are disjoint
+
+[back to current section](#data-structures)
+
+### Set
+
+A **set** is nothing more than an unordered collection of elements with absolutely no duplicates.
+
+Here are basic operations:
+- **Intersection**: *X and Y* yields another set of all the elements that are both in X and Y.
+- **Union**: *X or Y* yields another set of all the elements that are either in X or in Y.
+- **Set Differences**: *X - Y* yields the difference between two sets, or all the elements in set X that are not in set Y.
+- **Relative Complement**: *Y \ X* yields a set with all of the elements in set Y that do not also exist in set X.
+- **Symmetric Difference / Disjunctive Union**: *X delta Y* yields all the elements that exist in either of the sets, but do not exist in the intersection *X and Y* of the two sets.
+
+The time complexity of set operations:
+- *O(length(X) + length(Y))* for intersection, union, difference/complement: This is because in order for us to find the intersection, union, or difference/complement of these two sets, we have to effectively traverse through the entire length of the two sets being compared.
+- *O(1)* for add, remove, search, get length: This can be incredibly powerful, and often means that a set might be a better structure than a dictionary or a hash!
+
+Hash tables are often used to implement sets!
+- First, given what we know about hash tables, they’ll always have unique keys for each element. This is great for sets, since sets can only have unique values in them.
+- Second, in hash tables, order doesn’t really matter, just as how order doesn’t matter in a set.
+- Finally, hash tables provide a O(1) constant access time, which is what ideal for basic operations performed on a set.
+
+**Relational databases** are based entirely upon set theory. Even the most complicated SQL statements are nothing more than operations on sets.
+
+![SQL-Joins](assets/SQL-Joins.jpg)
 
 [back to current section](#data-structures)
 
