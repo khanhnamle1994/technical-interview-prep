@@ -31,7 +31,7 @@ def spiralTraverse(array):
     # Loop condition
     while (start_row < end_row and start_col < end_col):
         # Print the first row from the remaining rows
-        for i in range(0, end_col):
+        for i in range(start_col, end_col):
             result.append(array[start_row][i])
         # Move bound inwards
         start_row += 1
@@ -44,12 +44,16 @@ def spiralTraverse(array):
 
         # Print the last row from the remaining rows
         for i in range(end_col - 1, start_col - 1, -1):
+            if start_row == end_row:
+                break
             result.append(array[end_row - 1][i])
         # Move bound inwards
         end_row -= 1
 
         # Print the first column from the remaining columns
         for i in range(end_row - 1, start_row - 1, -1):
+            if start_col == end_col:
+                break
             result.append(array[i][start_col])
         # Move bound inwards
         start_col += 1
@@ -60,9 +64,8 @@ def spiralTraverse(array):
 # Driver Code
 array = [
     [1, 2, 3, 4],
-    [12, 13, 14, 5],
-    [11, 16, 15, 6],
-    [10, 9, 8, 7],
+    [10, 11, 12, 5],
+    [9, 8, 7, 6],
 ]
 
 # Expected Output = [1, 2, ..., 15, 16]

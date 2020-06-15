@@ -5,6 +5,7 @@ Here are the sections:
 * [Algorithms](#algorithms)
 * [Data Structures](#data-structures)
 * [Curated LeetCode Questions](#curated-leetcode-questions)
+* [AlgoExpert](#algoexpert)
 * [Software Engineering](#software-engineering)
 * [System Design](#system-design)
 
@@ -16,6 +17,7 @@ These are the best online resources that I used while preparing for technical co
 * [Pramp](https://www.pramp.com/): A free online peer-to-peer platform for practicing technical interviews.
 * [LeetCode](https://leetcode.com/): One of the best online resource providing a rich library of more than 300 real coding interview questions with 7 supported languages - C, C++, Java, Python, C#, JavaScript, Ruby.
 * [Interview Cake](https://www.interviewcake.com/): Another site that preps software engineering candidates for coding interview.
+* [AlgoExpert](https://www.algoexpert.io/product): The ultimate resource to prepare for coding interviews. Everything you need, in one streamlined platform.
 
 ## How to Succeed in Data Structures and Algorithms Interview
 
@@ -318,7 +320,9 @@ Here are [the most commonly used data structures](https://www.freecodecamp.org/n
 6. [Graphs](#graphs)
 7. [Hash Tables](#hash-tables)
 8. [Set](#set)
-9. [Comparisons](#comparisons)
+9. [Heaps](#heaps)
+10. [Tries](#tries)
+11. [Comparisons](#comparisons)
 
 ### Arrays
 
@@ -770,6 +774,21 @@ Hash tables are often used to implement sets!
 
 [back to current section](#data-structures)
 
+### Heaps
+
+A **heap** is really nothing more than a binary tree with some additional rules that it has to follow. These two rules are the two properties that define what differentiates a heap structure from any other tree structure.
+- **Shape**: A heap must be a **complete** binary tree. This means that all of the levels of the tree must be completely filled - except may be the last one. Also, the last level must have the left-most nodes filled, always!
+- **Order**: A heap's root node must have all of its children be either greater than or equal to its children (**min-heap**), or less than or equal to its children (**max-heap**).
+
+Min-Heap vs Max-Heap:
+- These two formats are the two ways that a heap can be ordered - also called the **heap-order property**.
+- In a **min-heap**, every single parent node (including the root) is less than or equal to the value of its children nodes. The *minimum* value key is always at the root node.
+- In a **max-heap**, every single parent node (including the root) is greater than or equal to the value of its children nodes. The *maximum* value key is always at the root node.
+- We can always have duplicate values in a heap — there’s no restriction against that.
+- Unlike binary search trees, the left node does not have to be smaller than the right node!
+
+[back to current section](#data-structures)
+
 ### Comparisons
 
 ![Data-Structures-Comparison](assets/Data-Structures-Comparison.png)
@@ -809,7 +828,9 @@ This great list of top 75 LeetCode questions came from [Team Blind](https://www.
 - [Jump Game](https://leetcode.com/problems/jump-game/) (Medium)
 
 ### Graph
+- [Clone Graph](https://leetcode.com/problems/clone-graph/) (Medium)
 - [Course Schedule](https://leetcode.com/problems/course-schedule/) (Medium)
+- [Pacific Atlantic Water Flow](https://leetcode.com/problems/pacific-atlantic-water-flow/) (Medium)
 - [Number of Islands](https://leetcode.com/problems/number-of-islands/) (Medium)
 
 ### Interval
@@ -820,6 +841,7 @@ This great list of top 75 LeetCode questions came from [Team Blind](https://www.
 - [Remove Nth Node From End Of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/) (Medium)
 - [Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/) (Easy)
 - [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) (Easy)
+- [Reorder List](https://leetcode.com/problems/reorder-list/) (Medium)
 
 ### Matrix
 - [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/) (Medium)
@@ -843,6 +865,16 @@ This great list of top 75 LeetCode questions came from [Team Blind](https://www.
 ### Heap
 - [Merge K Sorted Lists](https://leetcode.com/problems/merge-k-sorted-lists/) (Hard)
 - [Top K Frequent Elements](https://leetcode.com/problems/top-k-frequent-elements/) (Medium)
+
+[back to top](#technical-interview-prep)
+
+## AlgoExpert
+
+### Easy
+- [Node Depths](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Algoexpert/Node-Depths.py)
+
+### Medium
+- [Spiral Traverse](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Algoexpert/Spiral-Traverse.py)
 
 [back to top](#technical-interview-prep)
 
