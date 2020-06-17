@@ -780,12 +780,31 @@ A **heap** is really nothing more than a binary tree with some additional rules 
 - **Shape**: A heap must be a **complete** binary tree. This means that all of the levels of the tree must be completely filled - except may be the last one. Also, the last level must have the left-most nodes filled, always!
 - **Order**: A heap's root node must have all of its children be either greater than or equal to its children (**min-heap**), or less than or equal to its children (**max-heap**).
 
-Min-Heap vs Max-Heap:
+**Min-Heap vs Max-Heap**
 - These two formats are the two ways that a heap can be ordered - also called the **heap-order property**.
 - In a **min-heap**, every single parent node (including the root) is less than or equal to the value of its children nodes. The *minimum* value key is always at the root node.
 - In a **max-heap**, every single parent node (including the root) is greater than or equal to the value of its children nodes. The *maximum* value key is always at the root node.
 - We can always have duplicate values in a heap — there’s no restriction against that.
 - Unlike binary search trees, the left node does not have to be smaller than the right node!
+
+**Growking and Shrinking A Heap**
+- We must always maintain the shape and structure of a heap — otherwise, we’re violating one of its two properties!
+- When **growing** a heap, we can only ever add a node to the left-most available spot in the tree; that is to say, the left most available node, at the lowest possible level. Then we can swap nodes that are out of order.
+- Most heaps **remove** the root node. The only node we can remove and replace the root node with is the left-most, lowest-level leaf node. Then, we continue to "bubble down" the current root node until we are no longer violating the heap-order property - that is, until all the parent nodes are greater than or equal to their child nodes.
+
+**Heap Implementation**
+- If we know the index of the root node, we can manipulate that index in order to determine where its child nodes would be located within that same array representation of the heap.
+- If i = index of a parent node, then 2i + 1 = index of right child node and 2i + 2 = index of left child node.
+- If n = index of the current node, then (n-1)/2 = index of current node's parent.
+
+**Heap and Priority Queue**
+- A **priority queue** is a queue data structure with some additional properties:
+  - Every item has a priority associated with it - usually an integer.
+  - An item with a high priority is de-queued before an item with a low priority.
+  - Two items with an equal priority are de-queued based on their order in the queue.
+- Binary heaps are efficient ways of implementing priority queue.
+ - Finding the max/min element takes constant time (O(1)).
+ - Insertion/deletion takes logarithmic time (O(logn)).
 
 [back to current section](#data-structures)
 
