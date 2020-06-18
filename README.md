@@ -808,6 +808,32 @@ A **heap** is really nothing more than a binary tree with some additional rules 
 
 [back to current section](#data-structures)
 
+### Tries
+
+A **trie** is a tree-like data structure whose nodes store the letters of an alphabet. By structuring the nodes in a particular way, words and strings can be retrieved from the structure by traversing down a branch path of the tree.
+- The shape and structure of a trie is always a set of linked nodes, all connecting back to an empty root node. Each node contains an array of pointers (child "nodes"), one for each possible alphabetic value.
+- The size of a trie is directly connected/correlated to the size of the alphabet that is being represented.
+
+**What’s in a single node of a trie?**
+- A single node in a trie contains just two things:
+  - A value, which might be null.
+  - An array of references to child nodes, all of which also might be null.
+- When a trie representing the English language is created, it consists of a single root node, whose value is usually set to an empty string: "".
+  - That root node will also have an array that contains 26 references, all of which will point to null at first.
+  - As the trie grows, those pointers start to get filled up with references to other nodes nodes.
+
+**Trie Operations**
+- Search through a trie
+- Delete from a trie
+
+**Tries vs Hash Tables**
+
+**How tries changes as they grow**
+
+**Big O Notation of a trie structure**
+
+
+
 ### Comparisons
 
 ![Data-Structures-Comparison](assets/Data-Structures-Comparison.png)
@@ -1093,3 +1119,65 @@ Continuous integration is one of the strategies to increase development speed an
 ## System Design
 
 When building software applications, it is important to make good design decisions. To practice your software design, review [this interview preparation document](https://workera.ai/candidates/interview_prep/#h.dxekc5ol5li).
+
+### What Are Design Fundamentals?
+
+- Categorized into 4 parts: Foundational Knowledge, Key Characteristics, Components, and Tech Services.
+- From general to specific concepts.
+
+### Client-Server Model
+
+- The client sends the data to a sever, while the server returns the data to the client. For example, the browser is the client, while the web address is the server.
+- A DNS query is sent by the client to a pre-determined IP address (an unique identifier) of the server.
+- HTTP is a way to send information so that the server can understand.
+- Port is the medium where client-server communication happens.
+
+### Network Protocols
+
+- A protocol is an agreed upon set of rules for interaction between two parties.
+- In the context of networking, the protocol happens between two machines (client and server): content, format, order of the messages sent between them.
+- IP (Internet Protocol):
+  - IP packet is the fundamental unit of data being sent between two machines.
+  - IP packets are made up of bytes. There are two main sections: header and data.
+- TCP (Transmission Control Protocol) is built on top of the IP's data section.
+  - TCP is a wrapper around IP.
+- HTTP is built on top of TCP
+  - HTTP Request includes the host name, the port number, the method (POST, GET, PUT, DELETE), the path directory, the header, and the body.
+  - HTTP Response includes the status code, the header, and the body.
+
+### Storage
+
+- A database stores and retrieves data.
+- A database is a server.
+- If you store data on disk, then it will persist. This is not the case when the data is stored on memory.
+
+### Latency and Throughput
+
+- Latency: how long it takes for data to traverse the system.
+  - Reading from memory will be much faster than reading from disk.
+  - Depending on the hardware that you have, latency might be big or small.
+- Throughput: how much work the machine can perform in a given amount of time.
+- Latency and throughput are not necessarily correlated.
+
+### Availability
+
+- Availability can be measured as the percentage of the system uptime in a given year.
+- Nines are percentage with the number 9 (99% are two nines, 99.9% are three nines).
+- SLA (Service Level Agreement) is an agreement between the provider and the customer on the availability of the system.
+- Redundancy is the act of multiplying certain parts of the system.
+
+### Caching
+
+- Use caching to improve the latency of a system.
+- You can cache at the client level, the server level, between the server and the database, or even the hardware level.
+- Caching is helpful when:
+  - The system makes a lot of network requests.
+  - The system performs very computationally long operations.
+- Caching has a lot of pitfalls:
+  - If the data is static/immutable, then caching is beautiful.
+  - If the data is not immutable, things get tricky.
+- Eviction policy on how to get rid of data:
+  - LRU: Least Recently Used
+  - LFU: Least Frequently Used
+  - LIFO/FIFO basis
+  - Random
