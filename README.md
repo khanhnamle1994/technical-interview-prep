@@ -1181,3 +1181,58 @@ When building software applications, it is important to make good design decisio
   - LFU: Least Frequently Used
   - LIFO/FIFO basis
   - Random
+
+### Proxies
+
+- The forward proxy is a server that acts on behalf of the client in the client-server relationship.
+  - The forward proxy can hide the identity of the client.
+  - The source IP address of the client can be removed during this transaction.
+- The reverse proxy is a server that acts on behalf of the server in the client-server relationship.
+  - The client does not know the true identity of the server.
+  - It can be pivotal in complicated system that deals with logging, caching, and load balancers.
+
+### Load Balancers
+
+- A load balancer is a server that sits between a set of clients and a set of servers.
+  - It balances workload across resources - rerouting traffic of requests between the two sides.
+  - It makes the overall system having better latency and better throughput.
+  - It is a type of reverse proxy, typically acting on behalf of the server.
+- Load balancers can be hardware or software.
+ - You can do more with software load balancer: personalization, scaling, etc.
+ - You are limited with the hardware capacity in hardware load balancer.
+- You can put specific weights on specific load balancers.
+- IP-based load balancing can be very helpful during caching by maximizing your caches.
+=> Pick server selection strategies according to the use cases.
+
+
+### Hashing
+
+- Hashing transforms data into fixed-size values (user name, IP address, etc.)
+- You can use hashing to hash requests that come into load balancers and bucket the requests into appropriate servers.
+- A solid hashing function is to assign the client with the server using the mod of total number of servers.
+  - For example, there are 4 servers. The client 11 got assigned to server 3, client 12 to server 0, client 13 to server 0, and client 14 to server 2.
+  - We will never miss caching hits.
+- If a server dies, then we need to change our hashing function according to the new number of servers.
+=> Good hashing maintains some level of consistency in the mappings of requests happening between clients and servers.
+
+### Relational Databases
+
+- Relational database imposes on the data a tabular-like structure.
+  - Each table has rows as data instances and columns as data attributes.
+  - Data in a relational database are highly structured and thus have well-defined schema.
+- Non-relational database allows more flexible data structure.
+- Most relational databases support SQL (Structured Query Language).
+- Relational database must use ACID transactions:
+  - A: atomicity - each operation in a transaction is a unit. All operations must either all succeed or all fail.
+  - C: consistency - any transaction in the database must abide by the same rules.
+  - I: isolation - multiple transactions can happen, but they must happen sequentially.
+  - D: durability - the effects of any transaction made in the database are permanent.
+- Database indices help us search for data based on certain attributes in the table easier and faster.
+
+### Key-Value Stores
+
+- Key-Value mapping is suitable for caching, dynamic configuration, etc.
+- You can access data directly via keys -> Lower latency and increase throughput.
+  - Some key-value stores write data to disk.
+  - Either key-value stores write data in memory.
+=> Choose the ones that fit your engineering problem (Amazon DynamoDB, Redis, Oracle NoSQL, etc.)
