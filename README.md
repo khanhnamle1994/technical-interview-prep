@@ -1204,7 +1204,6 @@ When building software applications, it is important to make good design decisio
 - IP-based load balancing can be very helpful during caching by maximizing your caches.
 => Pick server selection strategies according to the use cases.
 
-
 ### Hashing
 
 - Hashing transforms data into fixed-size values (user name, IP address, etc.)
@@ -1236,3 +1235,38 @@ When building software applications, it is important to make good design decisio
   - Some key-value stores write data to disk.
   - Either key-value stores write data in memory.
 => Choose the ones that fit your engineering problem (Amazon DynamoDB, Redis, Oracle NoSQL, etc.)
+
+### Replication and Sharding
+
+- Replication means duplicating the main database to create a replica database.
+  - Whenever you update the main database, that update also happens synchronously on the replica database. You never want the replica to go out-of-date with the main database.
+  - This replica will take over if the main database happens to go down.
+- Sharding means splitting up the database into certain chunks (called "shards").
+  - This helps increase the throughput and avoid duplicating so much data at the same time.
+  - You can shard the database based on the attributes of the data (customer ID, geo-region, letter names, etc.)
+  - To avoid concentrating too much data on certain sharks (hot spots), you should use a consistent and efficient hashing function to assign data into their respective shards.
+
+### Leader Election
+
+- You want to have multiple distributed servers electing a "leader" server to be the only server responsible to perform the business logic.
+  - The group of servers are then called "followers."
+  - When the "leader" server dies, another server will takeover.
+- The act of having multiple servers to gain consensus is really difficult. You would like a "consensus algorithm" to handle this act.
+- In the industry, you use third-party services to implement this consensus algorithm. The two popular tools are Zookeper and Etcd.
+
+### Peer-To-Peer Networks
+
+- Peer-to-peer network can transfer significantly more data than a hierarchical top-down network.
+- In a peer-to-peer network, your peers need to know what peers to talk to next. This process is called peer discovery/selection.
+  - The first method is to have some sort of central database to orchestrate the entire peer-to-peer network (called a "tracker").
+  - The second method is called epidemic/gossip protocol, where peers exchange information to the rest of the network. All peers carry their own marks/hash tables in order to communicate such information with others. These hash tables are also called distributed hash tables.
+- An example of peer-to-peer network is Airbnb's Kraken.
+
+### Polling and Streaming
+
+- In polling, the client issues a request to the server following a set of recurrent interval.
+  - This doesn't work for application that requires instantaneous data.
+  - The server only sends the data to the client when the client makes a request.
+- In streaming, the client opens a long-live connection with the server. This can be accomplished via a socket - a portal for communication between machines.
+  - The client thus listens to the server in a continuous fashion.
+  - The server must proactively sends data to the client.
