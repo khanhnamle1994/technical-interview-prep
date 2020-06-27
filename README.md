@@ -1270,3 +1270,47 @@ When building software applications, it is important to make good design decisio
 - In streaming, the client opens a long-live connection with the server. This can be accomplished via a socket - a portal for communication between machines.
   - The client thus listens to the server in a continuous fashion.
   - The server must proactively sends data to the client.
+
+### Configuration
+
+- Configuration is a set of parameters that you can use in your application.
+- Configuration files are usually written in JSON or YAML files.
+- There are two types of configurations:
+  - Static configuration is safer but slower. Changes made to your application requires a re-deployment process.
+  - Dynamic configuration is more complex but faster. Changes made to your application have instant impact.
+
+### Rate Limiting
+
+- Rate limiting means limiting the amount of operations that can be performed in a given amount of time.
+- This helps protect the system from going down because of high traffic volume.
+
+### Logging and Monitoring
+
+- Logging helps you get the information on your code and debug your issues at scale. Two popular types of log outputs are SysLog and JSON files.
+- Monitoring helps measure the health of your system and capture important metrics regarding its performance.
+
+### Publish/Subscribe Pattern
+
+- Publish/subscribe pattern is a paradigm that consists of 4 entities:
+  - Publisher publishes data into topics.
+  - Subscriber subscribes to topics to get the data.
+  - Topics are channels with messages.
+  - Messages represent some form of data that would be relevant to the subscriber.
+- The publisher and subscriber communicate via topics, not directly to each other.
+- The topics are essentially forms of database that persist the messages.
+- The messages are delivered at least once to the subscribers, and can often be sent multiple times. This concept is known as "idempotence."
+
+### MapReduce
+
+- MapReduce is a framework to process very large dataset that are spread across the system in a fast and fault-tolerant manner:
+  - The Map function transforms the initial data input to intermediate key-value pairs.
+  - The Reduce function re-organizes and reduces the key-value pairs into some forms of final outputs.
+- We assume that we have access to a distributed data file system that can control the Map and Reduce workers.
+- We can send the Map program to the data lake and transform the data there, then get the processed data later.
+- The key-value pairs are very important.
+- MapReduce handles machine failures by re-performing the Map/Reduce functions when failure occurs.
+- Key questions to pay attention to:
+  - What is the Map function?
+  - What is the Reduce function?
+  - What are the inputs to the Map step and the outputs from the Reduce step?
+  - How are the intermediate key-value pairs re-organized?
