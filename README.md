@@ -1120,6 +1120,8 @@ Continuous integration is one of the strategies to increase development speed an
 
 When building software applications, it is important to make good design decisions. To practice your software design, review [this interview preparation document](https://workera.ai/candidates/interview_prep/#h.dxekc5ol5li).
 
+The concepts below come from AlgoExpert's [System Design Fundamentals](https://www.algoexpert.io/systems/fundamentals).
+
 ### What Are Design Fundamentals?
 
 - Categorized into 4 parts: Foundational Knowledge, Key Characteristics, Components, and Tech Services.
@@ -1127,10 +1129,25 @@ When building software applications, it is important to make good design decisio
 
 ### Client-Server Model
 
-- The client sends the data to a sever, while the server returns the data to the client. For example, the browser is the client, while the web address is the server.
-- A DNS query is sent by the client to a pre-determined IP address (an unique identifier) of the server.
-- HTTP is a way to send information so that the server can understand.
-- Port is the medium where client-server communication happens.
+**Client**
+- A machine or process that requests data or service from a server.
+
+**Server**
+- A machine or process that provides data or service for a client, usually by listening for incoming network calls.
+
+Note that a single machine or piece of software can be both a client and a server at the same time. For instance, a single machine could act as a server for end users and as a client for a database
+
+**Client-Server Model**
+- The paradigm by which modern systems are designed, which consists of clients requesting data or service from servers and servers providing data or service to clients.
+
+**IP Address**
+- An address given to each machine connected to the public internet. IPv4 addresses consist of 4 numbers separated by dots: **a.b.c.d** where all 4 numbers are between 0 and 255. Special values include:
+  - **127.0.0.1**: Your own local machine. Also referred to as **localhost**.
+  - **192.168.x.y**: Your private network. For instance, your machine and all machines on your private WIFI network will usually have the **192.168** prefix.
+
+**DNS**
+- Short for Domain Name System, it describes the entities and protocols involved in the translation from domain names to IP Addresses.
+- Typically, machines make a DNS query to a well-known entity which is responsible for returning the IP address (or multiple ones) of the requested domain name in the response.
 
 ### Network Protocols
 
