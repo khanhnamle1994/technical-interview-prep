@@ -1122,12 +1122,15 @@ When building software applications, it is important to make good design decisio
 
 The concepts below come from AlgoExpert's [System Design Fundamentals](https://www.algoexpert.io/systems/fundamentals).
 
+* [Client and Server Model](#client-and-server-model)
+* [Network Protocols](#network-protocols)
+
 ### What Are Design Fundamentals?
 
 - Categorized into 4 parts: Foundational Knowledge, Key Characteristics, Components, and Tech Services.
 - From general to specific concepts.
 
-### Client-Server Model
+### Client and Server Model
 
 **Client**
 - A machine or process that requests data or service from a server.
@@ -1151,16 +1154,23 @@ Note that a single machine or piece of software can be both a client and a serve
 
 ### Network Protocols
 
-- A protocol is an agreed upon set of rules for interaction between two parties.
-- In the context of networking, the protocol happens between two machines (client and server): content, format, order of the messages sent between them.
-- IP (Internet Protocol):
-  - IP packet is the fundamental unit of data being sent between two machines.
-  - IP packets are made up of bytes. There are two main sections: header and data.
-- TCP (Transmission Control Protocol) is built on top of the IP's data section.
-  - TCP is a wrapper around IP.
-- HTTP is built on top of TCP
-  - HTTP Request includes the host name, the port number, the method (POST, GET, PUT, DELETE), the path directory, the header, and the body.
-  - HTTP Response includes the status code, the header, and the body.
+- A protocol is an agreed upon set of rules for interaction between two parties. In the context of networking, the protocol happens between two machines (client and server): content, format, order of the messages sent between them.
+
+**IP (Internet Protocol)**
+- IP outlines how almost all machine-to-machine communications should happen in the world.
+- Other protocols like **TCP**, **UDP**, and **HTTP** are built on top of IP.
+**TCP (Transmission Control Protocol)**
+- TCP is built on top of the IP's data section.
+- It allows for ordered and reliable data delivery between machines over the public internet by creating a **connection**.
+- TCP is usually implemented in the kernel, which exposes **sockets** to applications that they can use to stream data through an open connection.
+**HTTP (HyperText Transfer Protocol)**
+- HTTTP is built on top of TCP.
+- Client makes HTTP requests, and serves respond with a response.
+**IP Packet**
+- An IP packet is effectively the smallest unit used to describe data being sent over **IP**, aside from bytes.
+- It consists of:
+  - an **IP header**, which contains the source and destination **IP addresses** as well as other information related to the network.
+  - a **payload**, which is just the data being sent over the network.
 
 ### Storage
 
