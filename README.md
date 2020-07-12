@@ -1124,6 +1124,7 @@ The concepts below come from AlgoExpert's [System Design Fundamentals](https://w
 
 * [Client and Server Model](#client-and-server-model)
 * [Network Protocols](#network-protocols)
+* [Storage](#storage)
 
 ### What Are Design Fundamentals?
 
@@ -1152,6 +1153,8 @@ Note that a single machine or piece of software can be both a client and a serve
 - Short for Domain Name System, it describes the entities and protocols involved in the translation from domain names to IP Addresses.
 - Typically, machines make a DNS query to a well-known entity which is responsible for returning the IP address (or multiple ones) of the requested domain name in the response.
 
+[back to current section](#system-design)
+
 ### Network Protocols
 
 - A protocol is an agreed upon set of rules for interaction between two parties. In the context of networking, the protocol happens between two machines (client and server): content, format, order of the messages sent between them.
@@ -1159,24 +1162,47 @@ Note that a single machine or piece of software can be both a client and a serve
 **IP (Internet Protocol)**
 - IP outlines how almost all machine-to-machine communications should happen in the world.
 - Other protocols like **TCP**, **UDP**, and **HTTP** are built on top of IP.
+
 **TCP (Transmission Control Protocol)**
 - TCP is built on top of the IP's data section.
 - It allows for ordered and reliable data delivery between machines over the public internet by creating a **connection**.
 - TCP is usually implemented in the kernel, which exposes **sockets** to applications that they can use to stream data through an open connection.
+
 **HTTP (HyperText Transfer Protocol)**
 - HTTTP is built on top of TCP.
 - Client makes HTTP requests, and serves respond with a response.
+
 **IP Packet**
 - An IP packet is effectively the smallest unit used to describe data being sent over **IP**, aside from bytes.
 - It consists of:
   - an **IP header**, which contains the source and destination **IP addresses** as well as other information related to the network.
   - a **payload**, which is just the data being sent over the network.
 
+[back to current section](#system-design)
+
 ### Storage
 
-- A database stores and retrieves data.
-- A database is a server.
-- If you store data on disk, then it will persist. This is not the case when the data is stored on memory.
+**Databases**
+- Databases are programs that either use disk or memory to do 2 core things: **record** data and **query** data.
+- In general, they are themselves servers that are long-lived and interact with the rest of your application through network calls, with protocols on top of TCP or even HTTP.
+- Some databases only keep records in memory, and the users of such databases are aware of the fact that those records may be lost forever if the machine or process dies.
+- For the most part though, databases need persistence of those records, and thus cannot use memory. This means that you have to write your data to disk. Anything written to disk will remain through power loss or network partitions, so that's what is used to keep permanent records.
+- Since machines die often in a large-scale system, special disk partitions or volumes are used by the database processes, and those volumes can get recovered even if the machine were to go down permanently.
+
+**Disk**
+- Disks are usually refers to either **HDD (hard-disk drive)** or **SSD (solid-state drive)**.
+- Data written to disk will persist through power failures and general machine crashes.
+- Disk is also referred to as **non-volatile storage**.
+- SSD is far faster than HDD but also far more expensive from a financial point of view. Because of that, HDD will typically be used for data that's rarely accessed or updated, but that's stored for a long time, and SSD will be used for data that's frequently accessed and updated.
+
+**Memory**
+- Short for **Random Access Memory (RAM)**.
+- Data stored in memory will be lost when the process that has written that data dies.
+
+**Persistent Storage**
+- Usually refers to disk, but in general, it is any form of storage that persists if the process in charge of managing it dies.
+
+[back to current section](#system-design)
 
 ### Latency and Throughput
 
