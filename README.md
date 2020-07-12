@@ -1125,6 +1125,7 @@ The concepts below come from AlgoExpert's [System Design Fundamentals](https://w
 * [Client and Server Model](#client-and-server-model)
 * [Network Protocols](#network-protocols)
 * [Storage](#storage)
+* [Latency and Throughput](#latency-and-throughput)
 
 ### What Are Design Fundamentals?
 
@@ -1206,11 +1207,20 @@ Note that a single machine or piece of software can be both a client and a serve
 
 ### Latency and Throughput
 
-- Latency: how long it takes for data to traverse the system.
-  - Reading from memory will be much faster than reading from disk.
-  - Depending on the hardware that you have, latency might be big or small.
-- Throughput: how much work the machine can perform in a given amount of time.
-- Latency and throughput are not necessarily correlated.
+**Latency**
+- The time it takes for a certain operation to complete in a system.
+- Most often, this measure is a time duration, like milli-seconds or seconds. Below are common orders of magnitude:
+  - **Reading 1 MB from RAM**: 0.25 ms
+  - **Reading 1 MB from SSD**: 1 ms
+  - **Transfer 1 MB over Network**: 10 ms
+  - **Reading 1 MB from HDD**: 20 ms
+  - **Inter-Continental Round Trip**: 150 ms
+
+**Throughput**
+- The number of operations that a system can handle properly per time unit.
+- For instance, the throughput of a server can often be measured in requests per second.
+
+[back to current section](#system-design)
 
 ### Availability
 
