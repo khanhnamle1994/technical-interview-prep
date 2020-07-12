@@ -18,6 +18,7 @@ These are the best online resources that I used while preparing for technical co
 * [LeetCode](https://leetcode.com/): One of the best online resource providing a rich library of more than 300 real coding interview questions with 7 supported languages - C, C++, Java, Python, C#, JavaScript, Ruby.
 * [Interview Cake](https://www.interviewcake.com/): Another site that preps software engineering candidates for coding interview.
 * [AlgoExpert](https://www.algoexpert.io/product): The ultimate resource to prepare for coding interviews. Everything you need, in one streamlined platform.
+* [Software Engineering Interview Preparation](https://orrsella.gitbooks.io/soft-eng-interview-prep/content/): All the required theoretical material needed to pass a Facebook/Google software engineering interview.
 
 ## How to Succeed in Data Structures and Algorithms Interview
 
@@ -341,7 +342,7 @@ Basic Operations on Arrays:
 * **Size** — Get the total number of elements in array: O(1)
 
 **Commonly Asked Array Interview Questions**:
-1. Find the second minimum element of an array
+1. *Find the second minimum element of an array*
 
   - A **simple solution** is to sort the array in increasing order. The first 2 elements in sorted array would be 2 smallest elements. Time complexity is O(n logn).
   - A **better solution** is to scan the array twice. In 1st traversal, find the minimum element. Let this element be x. In 2nd traversal, find the smallest element greater than x. Time complexity of this solution is O(n).
@@ -354,13 +355,13 @@ Basic Operations on Arrays:
     b> Else if the current element is smaller than second, then update second.
   ```
 
-2. Find the first non-repeating element in an array of integers
+2. *Find the first non-repeating element in an array of integers*
 
   - A **simple solution** is to use 2 loops. The outer loop picks elements one by one and inner loop checks if the element is present more than once or not.
   - An **efficient solution** is to use hashing: (1) Traverse array and insert elements and their counts in a hash table. (2) Traverse array again and print first element with count equals to 1.
   - **Further optimization**: If array has many duplicates, we can also store index in hash table, using a hash table where value is a pair. Now we only need to traverse keys in hash table to find first non-repeating.
 
-3. Merge two sorted arrays
+3. *Merge two sorted arrays*
 
   - The idea is to use **Merge** function of **Merge sort** - O(n1 + n2) time and O(n1 + n2) space
     - Create a new array arr3[] of size n1 + n2.
@@ -369,6 +370,8 @@ Basic Operations on Arrays:
     - If there are remaining elements in arr1[] or arr2[], copy them also in arr3[].
 
 ![merge-sorted-arrays](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/Merge-two-sorted-arrays.png)
+
+4. *Remove even integers from an array*
 
 [back to current section](#data-structures)
 
@@ -416,9 +419,11 @@ class Stack:
 ```
 
 **Commonly Asked Stack Interview Questions**:
-* Evaluate postfix expression using a stack
-* Sort values in a stack
-* Check balanced parentheses in an expression
+1. *Implement two stacks using one array*
+
+2. *Sort values in a stack*
+
+3. *Check balanced parentheses in an expression*
 
 [back to current section](#data-structures)
 
@@ -467,9 +472,11 @@ class Queue:
 ```
 
 **Commonly Asked Queue Interview Questions**:
-* Implement stack using a queue
-* Reverse first k elements of a queue
-* Generate binary numbers from 1 to n using a queue
+1. *Implement stack using a queue*
+
+2. *Reverse first k elements of a queue*
+
+3. *Generate binary numbers from 1 to n using a queue*
 
 [back to current section](#data-structures)
 
@@ -499,10 +506,17 @@ A good rule of thumb for remember the characteristics of linked lists is this: *
 - However, if you find yourself wanting to add a bunch of elements to a list and aren’t worried about finding elements again later, or if you know that you won’t need to traverse through the entirety of the list, a linked list could be your new best friend.
 
 **Commonly Asked Linked List Interview Questions**:
-* Reverse a linked list
-* Detect loop in a linked list
-* Return Nth node from the end in a linked list
-* Remove duplicates from a linked list
+1. *Reverse a linked list*
+
+2. *Detect loop in a linked list*
+
+3. *Return Nth node from the end in a linked list*
+
+4. *Remove duplicates from a linked list*
+
+5. *Find the length of a linked list*
+
+6. *Find the middle value of a linked list*
 
 [back to current section](#data-structures)
 
@@ -561,7 +575,7 @@ A **binary tree** is a non linear data structure where each node can have at mos
   - Current node is 12. BOOM!
 
 **Commonly Asked Tree Interview Questions**:
-1. Find the height of a binary tree
+1. *Find the height of a binary tree*
 
 Recursively calculate the height of left and right subtrees of a node and assign the height to the node as max of the heights of 2 children plus 1.
 
@@ -574,7 +588,7 @@ Recursively calculate the height of left and right subtrees of a node and assign
   (d) Return max_depth
 ```
 
-2. Find nodes at “k” distance from the root
+2. *Find nodes at “k” distance from the root*
 
 ```
 def printKDistance(root, k):
@@ -586,7 +600,7 @@ def printKDistance(root, k):
     printKDistance(root.right, k - 1)
 ```
 
-3. Find ancestors of a given node in a binary tree
+3. *Find ancestors of a given node in a binary tree*
 
 ```
 def printAncestors(root, target):
@@ -681,12 +695,17 @@ g = graph(graph_elements)
 ```
 
 **Commonly Asked Graph Interview Questions**:
-* Implement Breadth and Depth First Search:
+1. *Implement Breadth and Depth First Search:*
   - [BFS](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Search-in-Python/bfs.py)
   - [DFS](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/Search-in-Python/dfs.py)
-* Check if a graph is a tree or not
-* Count number of edges in a graph
-* Find the shortest path between two vertices
+
+2. *Check if a graph is a tree or not*
+
+3. *Count number of edges in a graph*
+
+4. *Find the shortest path between two vertices*
+
+5. *Detect cycle in a graph*
 
 [back to current section](#data-structures)
 
@@ -806,6 +825,11 @@ A **heap** is really nothing more than a binary tree with some additional rules 
  - Finding the max/min element takes constant time (O(1)).
  - Insertion/deletion takes logarithmic time (O(logn)).
 
+**Commonly Asked Hashing Interview Questions**:
+1. *Find k smallest elements in a list*
+
+2. *Find k largest elements in an array*
+
 [back to current section](#data-structures)
 
 ### Tries
@@ -832,7 +856,12 @@ A **trie** is a tree-like data structure whose nodes store the letters of an alp
 
 **Big O Notation of a trie structure**
 
+**Commonly Asked Hashing Interview Questions**:
+1. *Find all words stored in a trie*
 
+2. *Find total number of words in a trie*
+
+[back to current section](#data-structures)
 
 ### Comparisons
 
@@ -1118,7 +1147,7 @@ Continuous integration is one of the strategies to increase development speed an
 
 ## System Design
 
-When building software applications, it is important to make good design decisions. To practice your software design, review [this interview preparation document](https://workera.ai/candidates/interview_prep/#h.dxekc5ol5li).
+When building software applications, it is important to make good design decisions. To practice your software design, review [this interview preparation document](https://workera.ai/candidates/interview_prep/#h.dxekc5ol5li). There is another solid post on [Acing Architecture Interview](https://lethain.com/acing-architecture-interview/) from Will Larson that I also recommend.
 
 The concepts below come from AlgoExpert's [System Design Fundamentals](https://www.algoexpert.io/systems/fundamentals).
 
@@ -1377,3 +1406,5 @@ Note that a single machine or piece of software can be both a client and a serve
   - What is the Reduce function?
   - What are the inputs to the Map step and the outputs from the Reduce step?
   - How are the intermediate key-value pairs re-organized?
+
+[back to top](#technical-interview-prep)
