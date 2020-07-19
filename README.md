@@ -1157,6 +1157,8 @@ The concepts below come from AlgoExpert's [System Design Fundamentals](https://w
 * [Latency and Throughput](#latency-and-throughput)
 * [Availability](#availability)
 * [Caching](#caching)
+* [Proxies](#proxies)
+* [Load Balancers](#load-balancers)
 
 ### What Are Design Fundamentals?
 
@@ -1325,22 +1327,25 @@ Note that a single machine or piece of software can be both a client and a serve
 - A server that sits between clients and servers and acts on behalf of the servers, typically used for logging, load balancing, or caching.
 
 **Nginx**
-- A very popular webserver that's often used as a reverse proxy and load balancer.
+- A very popular webserver that's often used as a **reverse proxy** and **load balancer**.
 
 [back to current section](#system-design)
 
 ### Load Balancers
 
-- A load balancer is a server that sits between a set of clients and a set of servers.
-  - It balances workload across resources - rerouting traffic of requests between the two sides.
-  - It makes the overall system having better latency and better throughput.
-  - It is a type of reverse proxy, typically acting on behalf of the server.
-- Load balancers can be hardware or software.
- - You can do more with software load balancer: personalization, scaling, etc.
- - You are limited with the hardware capacity in hardware load balancer.
-- You can put specific weights on specific load balancers.
-- IP-based load balancing can be very helpful during caching by maximizing your caches.
-=> Pick server selection strategies according to the use cases.
+**Load Balancer**
+- A type of **reverse proxy** that distributes traffic across servers.
+- Load balancers can be found in many parts of a system, from the DNS layer all the way to the database layer.
+
+**Server-Selection Strategy**
+- How a **load balancer** chooses servers when distributing traffic amongst multiple servers.
+- Commonly used strategies include round-robin, random selection, performance-based selection, and IP-based routing.
+
+**Hot Spot**
+- When distributing a workload across a set of servers, that workload might be spread unevenly.
+- This can happen if your **sharding key** or your **hashing function** are suboptimal, or if your workload is naturally skewed: some servers will receive a lot more traffic than others, thus creating a "hot spot".
+
+[back to current section](#system-design)
 
 ### Hashing
 
