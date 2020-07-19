@@ -1155,6 +1155,7 @@ The concepts below come from AlgoExpert's [System Design Fundamentals](https://w
 * [Network Protocols](#network-protocols)
 * [Storage](#storage)
 * [Latency and Throughput](#latency-and-throughput)
+* [Availability](#availability)
 
 ### What Are Design Fundamentals?
 
@@ -1253,10 +1254,41 @@ Note that a single machine or piece of software can be both a client and a serve
 
 ### Availability
 
-- Availability can be measured as the percentage of the system uptime in a given year.
-- Nines are percentage with the number 9 (99% are two nines, 99.9% are three nines).
-- SLA (Service Level Agreement) is an agreement between the provider and the customer on the availability of the system.
-- Redundancy is the act of multiplying certain parts of the system.
+**Process**
+- A program that is currently running on a machine. You should always assume that any process may get terminated at any time in a sufficiently large system.
+
+**Server**
+- A machine or process that provides data or service for a client, usually by listening for incoming network calls.
+
+**Node/Instance/Host**
+- These three terms refer to the same thing most of the time: a virtual or physical machine on which the developer runs processes.
+- Sometimes the word **server** also refers to this same concept.
+
+**Availability**
+- The odds of a particular server or service being up and running at any point in time, usually measured in percentages.
+- A server that has 99% availability will be operational 99% of the time (this would be described as having two **nines** of availability).
+
+**High Availability**
+- Used to describe systems that have particularly high levels of availability, typically 5 nines or more.
+
+**Nines**
+- Typically refers to percentages of uptime.
+- For example, 5 nines of availability means an uptime of 99.999% of the time.
+
+**Redundancy**
+- The process of replicating parts of a system in an effort to make it more reliable.
+
+**SLA**
+- Short for "service-level agreement", an SLA is a collection of guarantees given to a customer by a service provider.
+- SLAs typically make guarantees on a systems's availability, amongst other things.
+- SLAs are made up of one or multiple SLOs.
+
+**SLO**
+- Short for "service-level objective", an SLO is a guarantee given to a customer by a service provider.
+- SLOs typically make guarantees on a systems's availability, amongst other things.
+- SLOs constitute an SLA.
+
+[back to current section](#system-design)
 
 ### Caching
 
