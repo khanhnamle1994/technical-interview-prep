@@ -1318,12 +1318,16 @@ Note that a single machine or piece of software can be both a client and a serve
 
 ### Proxies
 
-- The forward proxy is a server that acts on behalf of the client in the client-server relationship.
-  - The forward proxy can hide the identity of the client.
-  - The source IP address of the client can be removed during this transaction.
-- The reverse proxy is a server that acts on behalf of the server in the client-server relationship.
-  - The client does not know the true identity of the server.
-  - It can be pivotal in complicated system that deals with logging, caching, and load balancers.
+**Forward Proxy**
+- A server that sits between a client and servers and acts on behalf of the client, typically used to mask the client's identity (IP address). Note that forward proxies are often referred to as just proxies.
+
+**Reverse Proxy**
+- A server that sits between clients and servers and acts on behalf of the servers, typically used for logging, load balancing, or caching.
+
+**Nginx**
+- A very popular webserver that's often used as a reverse proxy and load balancer.
+
+[back to current section](#system-design)
 
 ### Load Balancers
 
