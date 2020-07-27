@@ -1162,6 +1162,7 @@ The concepts below come from AlgoExpert's [System Design Fundamentals](https://w
 * [Hashing](#hashing)
 * [Relational Databases](#relational-databases)
 * [Key Value Stores](#key-value-stores)
+* [Replication and Sharding](#replication-and-sharding)
 
 ### What Are Design Fundamentals?
 
@@ -1435,13 +1436,23 @@ A type of database transaction that has 4 important properties:
 
 ### Replication and Sharding
 
-- Replication means duplicating the main database to create a replica database.
-  - Whenever you update the main database, that update also happens synchronously on the replica database. You never want the replica to go out-of-date with the main database.
-  - This replica will take over if the main database happens to go down.
-- Sharding means splitting up the database into certain chunks (called "shards").
-  - This helps increase the throughput and avoid duplicating so much data at the same time.
-  - You can shard the database based on the attributes of the data (customer ID, geo-region, letter names, etc.)
-  - To avoid concentrating too much data on certain sharks (hot spots), you should use a consistent and efficient hashing function to assign data into their respective shards.
+**Replication**
+- The act of duplicating the data from one database server to others.
+- This is used to increase the redundancy of your system and tolerate regional failures for instance.
+- Other times, you can use replication to move data closer to your clients, thus decreasing the latency of accessing specific data.
+
+**Sharding**
+- Sometimes called **data partitioning**, sharding is the act of splitting a database into two or more pieces called **shards** and is typically done to increase the throughput of your database.
+- Popular sharding strategies include:
+  - Sharding based on a client's region.
+  - Sharding based on the type of data.
+  - Sharding based on the hash of a column.
+
+**Hot Spot**
+- When distributing a workload across a set of servers, that workload might be spread unevenly.
+- This can happen if your **sharding key** or your **hashing function** are suboptimal, or if your workload is naturally skewed: some servers will receive a lot more traffic than others, thus creating a "hot spot."
+
+[back to current section](#system-design)
 
 ### Leader Election
 
