@@ -1161,6 +1161,7 @@ The concepts below come from AlgoExpert's [System Design Fundamentals](https://w
 * [Load Balancers](#load-balancers)
 * [Hashing](#hashing)
 * [Relational Databases](#relational-databases)
+* [Key Value Stores](#key-value-stores)
 
 ### What Are Design Fundamentals?
 
@@ -1406,15 +1407,31 @@ A type of database transaction that has 4 important properties:
 - In this model, reads might return a view of the system that is stale.
 - An eventually consistency datastore will give guarantees that the state of the database will eventually reflect writes within a time period.
 
+**Postgres**
+- A relational database that uses a dialect of SQL called [PostgreSQL](http://postgresql.org/).
+- Provides ACID transactions.
+
 [back to current section](#system-design)
 
-### Key-Value Stores
+### Key Value Stores
 
-- Key-Value mapping is suitable for caching, dynamic configuration, etc.
-- You can access data directly via keys -> Lower latency and increase throughput.
-  - Some key-value stores write data to disk.
-  - Either key-value stores write data in memory.
-=> Choose the ones that fit your engineering problem (Amazon DynamoDB, Redis, Oracle NoSQL, etc.)
+**Key-Value Store**
+- A Key-Value Store is a flexible NoSQL database that's often used for caching and dynamic configuration.
+- Popular options include DynamoDB, Etcd, Redis, and ZooKeeper.
+
+**Etcd**
+- [Etcd](https://etcd.io/) is a strongly consistent and highly available key-value store that's often used to implement leader election in a system.
+
+**Redis**
+- An in-memory key-value store.
+- Does offer some persistent storage options but is typically used as a really fast, best-effort caching solution.
+- [Redis](https://redis.io/) is also often used to implement **rate limiting**.
+
+**ZooKeeper**
+- [ZooKeeper](https://zookeeper.apache.org/) is a strongly consistent, highly available key-value store.
+- It's often used to store important configuration or to perform leader election.
+
+[back to current section](#system-design)
 
 ### Replication and Sharding
 
