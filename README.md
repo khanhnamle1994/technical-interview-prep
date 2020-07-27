@@ -1160,6 +1160,7 @@ The concepts below come from AlgoExpert's [System Design Fundamentals](https://w
 * [Proxies](#proxies)
 * [Load Balancers](#load-balancers)
 * [Hashing](#hashing)
+* [Relational Databases](#relational-databases)
 
 ### What Are Design Fundamentals?
 
@@ -1367,17 +1368,45 @@ Note that a single machine or piece of software can be both a client and a serve
 
 ### Relational Databases
 
-- Relational database imposes on the data a tabular-like structure.
-  - Each table has rows as data instances and columns as data attributes.
-  - Data in a relational database are highly structured and thus have well-defined schema.
-- Non-relational database allows more flexible data structure.
-- Most relational databases support SQL (Structured Query Language).
-- Relational database must use ACID transactions:
-  - A: atomicity - each operation in a transaction is a unit. All operations must either all succeed or all fail.
-  - C: consistency - any transaction in the database must abide by the same rules.
-  - I: isolation - multiple transactions can happen, but they must happen sequentially.
-  - D: durability - the effects of any transaction made in the database are permanent.
-- Database indices help us search for data based on certain attributes in the table easier and faster.
+**Relational Database**
+- A type of structured database in which data is stored following a tabular format; often supports powerful querying using SQL.
+
+**Non-Relational Database**
+- In contrast with relational database, a type of database that is free of imposed, tabular-like structure.
+- Non-relational databases are often referred to as NoSQL databases.
+
+**SQL**
+- Structured Query Language.
+- Relational databases can be used using a derivative of SQL such as PostgreSQL in the case of Postgres.
+
+**SQL Database**
+- Any database that supports SQL.
+- This term is often used synonymously with "Relational Database," though in practice, not every relational database supports SQL.
+
+**NoSQL Database**
+- Any database that is not SQL compatible is called NoSQL.
+
+**ACID Transaction**
+A type of database transaction that has 4 important properties:
+- **Atomicity** - The operations that constitute the transaction will either all succeed or all fail. There is no in-between state.
+- **Consistency** - The transaction cannot bring the database to an invalid state. After the transaction is committed or rolled back, the rules for each record will still apply, and all future transactions will see the effect of the transaction.
+- **Isolation** - The execution of multiple transactions concurrently will have the same effect as if they had been executed sequentially.
+- **Durability** - Any committed transaction is written to non-volatile storage. It will not be undone by a crash, power loss, or network partition.
+
+**Database Index**
+- A special auxiliary data structure that allows your database to perform certain queries much faster.
+- Indexes can typically only exist to reference structured data, like data stored in relational databases.
+- In practice, you create an index on one or multiple columns in your database to greatly speed up **read** queries that you run very often, with the downside of slightly longer **writes** to your database, since writes have to also take place in the relevant index.
+
+**Strong Consistency**
+- Strong Consistency usually refers to the consistency of ACID transactions, as opposed to Eventual Consistency.
+
+**Eventual Consistency**
+- A consistency model which is unlike Strong Consistency.
+- In this model, reads might return a view of the system that is stale.
+- An eventually consistency datastore will give guarantees that the state of the database will eventually reflect writes within a time period.
+
+[back to current section](#system-design)
 
 ### Key-Value Stores
 
