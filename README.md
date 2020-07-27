@@ -1163,6 +1163,7 @@ The concepts below come from AlgoExpert's [System Design Fundamentals](https://w
 * [Relational Databases](#relational-databases)
 * [Key Value Stores](#key-value-stores)
 * [Replication and Sharding](#replication-and-sharding)
+* [Leader Election](#leader-election)
 
 ### What Are Design Fundamentals?
 
@@ -1456,11 +1457,18 @@ A type of database transaction that has 4 important properties:
 
 ### Leader Election
 
-- You want to have multiple distributed servers electing a "leader" server to be the only server responsible to perform the business logic.
-  - The group of servers are then called "followers."
-  - When the "leader" server dies, another server will takeover.
-- The act of having multiple servers to gain consensus is really difficult. You would like a "consensus algorithm" to handle this act.
-- In the industry, you use third-party services to implement this consensus algorithm. The two popular tools are Zookeper and Etcd.
+**Leader Election**
+- The process by which nodes in a cluster elect a so-called "leader" amongst them, responsible for the primary operations of the service that these nodes support.
+- When correctly implemented, leader election guarantees that all nodes in the cluster know which one is the leader at any given time and can elect a new leader if the leader dies for whatever reason.
+
+**Consensus Algorithm**
+- A type of complex algorithms used to have multiple entities agree on a single data value, like who the "leader" is amongst a group of machines.
+- Two popular consensus algorithms are **Paxos** and **Raft**.
+
+**Paxos and Raft**
+- Two consensus algorithms that, when implemented correctly, allow for the synchronization of certain operations, even in a distributed setting.
+
+[back to current section](#system-design)
 
 ### Peer-To-Peer Networks
 
