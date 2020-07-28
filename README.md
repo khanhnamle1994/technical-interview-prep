@@ -1170,6 +1170,7 @@ The concepts below come from AlgoExpert's [System Design Fundamentals](https://w
 * [Rate Limiting](#rate-limiting)
 * [Logging and Monitoring](#logging-and-monitoring)
 * [Publish Subscribe Pattern](#publish-subscribe-pattern)
+* [MapReduce](#mapreduce)
 
 ### What Are Design Fundamentals?
 
@@ -1563,17 +1564,27 @@ A type of database transaction that has 4 important properties:
 
 ### MapReduce
 
-- MapReduce is a framework to process very large dataset that are spread across the system in a fast and fault-tolerant manner:
-  - The Map function transforms the initial data input to intermediate key-value pairs.
-  - The Reduce function re-organizes and reduces the key-value pairs into some forms of final outputs.
-- We assume that we have access to a distributed data file system that can control the Map and Reduce workers.
-- We can send the Map program to the data lake and transform the data there, then get the processed data later.
-- The key-value pairs are very important.
-- MapReduce handles machine failures by re-performing the Map/Reduce functions when failure occurs.
-- Key questions to pay attention to:
-  - What is the Map function?
-  - What is the Reduce function?
-  - What are the inputs to the Map step and the outputs from the Reduce step?
-  - How are the intermediate key-value pairs re-organized?
+**MapReduce**
+- A popular framework for processing very large datasets in a distributed setting efficiently, quickly, and in a fault-tolerant manner. A MapReduce job is comprised of 3 main steps:
+  - The **Map** step, which runs a **map function** on the various chunks of the dataset and transforms these chunks into intermediate **key-value pairs**.
+  - The **Shuffle** step, which reorganizes the intermediate **key-value pairs** such that pairs of the same key are routed to the same machine in the final step.
+  - The **Reduce** step, which runs a **reduce function** on the newly shuffled **key-value pairs** and transforms them into more meaningful data.
+- The canonical example of a MapReduce use case is counting the number of occurrences of words in a large text file.
+- When dealing with a MapReduce library, engineers and/or systems administrators only need to worry about map and reduce functions, as well as their inputs and outputs.
+- All other concerns, including the parallelization of tasks and the fault-tolerance of the MapReduce job, are abstracted away and taken care of by the MapReduce implementation.
+
+**Distributed File System**
+- A Distributed File System is an abstraction over a cluster of machines that allows them to act like one large file system.
+- The two most popular implementations of a DFS are the **Google File System** (GFS) and the **Hadoop Distributed File System** (HDFS).
+- Typically, DFSs take care of the classic **availability** and **replication** guarantees that can be tricky to obtain in a distributed-system setting.
+- The overarching idea is that files are split into chunks of a certain size, and those chunks are sharded across a large cluster of machines.
+- A central control plane is in charge of deciding where each chunk resides, routing reads to the right nodes, and handling communication between machines.
+- Different DFS implementations have slightly different APIs and semantics, but they achieve the same common goal: extremely large-scale persistent storage.
+
+**[Hadoop](https://hadoop.apache.org/)**
+- A popular, open-source framework that supports MapReduce jobs and many other kinds of data-processing pipelines.
+- Its central component is **HDFS** (Hadoop Distributed File System), on top of which other technologies have been developed.
+
+[back to current section](#system-design)
 
 [back to top](#technical-interview-prep)
