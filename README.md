@@ -1169,6 +1169,7 @@ The concepts below come from AlgoExpert's [System Design Fundamentals](https://w
 * [Configuration](#configuration)
 * [Rate Limiting](#rate-limiting)
 * [Logging and Monitoring](#logging-and-monitoring)
+* [Publish Subscribe Pattern](#publish-subscribe-pattern)
 
 ### What Are Design Fundamentals?
 
@@ -1538,16 +1539,27 @@ A type of database transaction that has 4 important properties:
 
 [back to current section](#system-design)
 
-### Publish/Subscribe Pattern
+### Publish Subscribe Pattern
 
-- Publish/subscribe pattern is a paradigm that consists of 4 entities:
-  - Publisher publishes data into topics.
-  - Subscriber subscribes to topics to get the data.
-  - Topics are channels with messages.
-  - Messages represent some form of data that would be relevant to the subscriber.
-- The publisher and subscriber communicate via topics, not directly to each other.
-- The topics are essentially forms of database that persist the messages.
-- The messages are delivered at least once to the subscribers, and can often be sent multiple times. This concept is known as "idempotence."
+**Publish/Subscribe Pattern**
+- Often shortened as **Pub/Sub**, the Publish/Subscribe pattern is a popular messaging model that consists of **publishers** and **subscribers**.
+- Publishers publish messages to special **topics** (sometimes called **channels**) without caring about or even knowing who will read those messages, and subscribers subscribe to topics and read messages coming through those topics.
+- Pub/Sub systems often come with very powerful guarantees like **at-least-once delivery**, **persistent storage**, **ordering** of messages, and **replayability** of messages.
+
+**Idempotent Operation**
+- An operation that has the same ultimate outcome regardless of how many times it's performed.
+- If an operation can be performed multiple times without changing its overall effect, it's idempotent.
+- Operations performed through a **Pub/Sub** messaging system typically have to be idempotent, since Pub/Sub systems tend to allow the same messages to be consumed multiple times.
+
+**[Apache Kafka](http://kafka.apache.org/)**
+- A distributed messaging system created by LinkedIn.
+- Very useful when using the **streaming** paradigm as opposed to **polling**.
+
+**[Cloud Pub/Sub](https://cloud.google.com/pubsub/)**
+- A highly scalable Pub/Sub messaging service created by Google.
+- Guarantees **at-least-once delivery** of messages and supports "rewinding" in order to reprocess messages.
+
+[back to current section](#system-design)
 
 ### MapReduce
 
