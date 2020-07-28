@@ -1168,6 +1168,7 @@ The concepts below come from AlgoExpert's [System Design Fundamentals](https://w
 * [Polling and Streaming](#polling-and-streaming)
 * [Configuration](#configuration)
 * [Rate Limiting](#rate-limiting)
+* [Logging and Monitoring](#logging-and-monitoring)
 
 ### What Are Design Fundamentals?
 
@@ -1524,8 +1525,18 @@ A type of database transaction that has 4 important properties:
 
 ### Logging and Monitoring
 
-- Logging helps you get the information on your code and debug your issues at scale. Two popular types of log outputs are SysLog and JSON files.
-- Monitoring helps measure the health of your system and capture important metrics regarding its performance.
+**Logging**
+- The act of collecting and storing logs - useful information about events in your system.
+- Typically your programs will outut log messages to its STDOUT or STDERR pipes, which will automatically get aggregated into a **centralized logging solution**.
+
+**Monitoring**
+- The process of having visibility into a system's key metrics, monitoring is typically implemented by collecting important events in a system and aggregating them in human-readable charts.
+
+**Alerting**
+- The process through which system administrators get notified when critical system issues occur.
+- Alerting can be set up by defining specific thresholds on monitoring charts, past which alerts are sent to a communication channel like Slack.
+
+[back to current section](#system-design)
 
 ### Publish/Subscribe Pattern
 
