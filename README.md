@@ -1165,6 +1165,7 @@ The concepts below come from AlgoExpert's [System Design Fundamentals](https://w
 * [Replication and Sharding](#replication-and-sharding)
 * [Leader Election](#leader-election)
 * [Peer To Peer Networks](#peer-to-peer-networks)
+* [Polling and Streaming](#polling-and-streaming)
 
 ### What Are Design Fundamentals?
 
@@ -1484,12 +1485,13 @@ A type of database transaction that has 4 important properties:
 
 ### Polling and Streaming
 
-- In polling, the client issues a request to the server following a set of recurrent interval.
-  - This doesn't work for application that requires instantaneous data.
-  - The server only sends the data to the client when the client makes a request.
-- In streaming, the client opens a long-live connection with the server. This can be accomplished via a socket - a portal for communication between machines.
-  - The client thus listens to the server in a continuous fashion.
-  - The server must proactively sends data to the client.
+**Polling**
+- The act of fetching a resource or piece of data regularly at an interval to make sure your data is not too stale.
+
+**Streaming**
+- In networking, it usually refers to the act of continuously getting a feed of information from a server by keeping an open connection between the two machines or processes.
+
+[back to current section](#system-design)
 
 ### Configuration
 
