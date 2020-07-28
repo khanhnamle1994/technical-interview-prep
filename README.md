@@ -1166,6 +1166,7 @@ The concepts below come from AlgoExpert's [System Design Fundamentals](https://w
 * [Leader Election](#leader-election)
 * [Peer To Peer Networks](#peer-to-peer-networks)
 * [Polling and Streaming](#polling-and-streaming)
+* [Configuration](#configuration)
 
 ### What Are Design Fundamentals?
 
@@ -1495,11 +1496,13 @@ A type of database transaction that has 4 important properties:
 
 ### Configuration
 
-- Configuration is a set of parameters that you can use in your application.
-- Configuration files are usually written in JSON or YAML files.
-- There are two types of configurations:
-  - Static configuration is safer but slower. Changes made to your application requires a re-deployment process.
-  - Dynamic configuration is more complex but faster. Changes made to your application have instant impact.
+**Configuration**
+- A set of parameters or constants that are critical to a system.
+- Configuration is typically written in **JSON** or **YAML** and can be either:
+  - **Static**, meaning that it's hard-coded and shipped with your system's application code.
+  - **Dynamic**, meaning that it lives outside of your system's application code.
+
+[back to current section](#system-design)
 
 ### Rate Limiting
 
