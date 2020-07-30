@@ -847,14 +847,25 @@ A **trie** is a tree-like data structure whose nodes store the letters of an alp
   - As the trie grows, those pointers start to get filled up with references to other nodes nodes.
 
 **Trie Operations**
-- Search through a trie
-- Delete from a trie
+- Search through a trie:
+  - If we search for the word/key "pie" and are able to find it, we can look to see if it has a value, and return it.
+  - If we search for the key "pi" and find the node at the last letter "i", we can look to see its value. If it has a NULL value, it means that "pi" is not currently a key.
+- Delete from a trie:
+  - If we want to remove a key/value pair, we first find the node for that key, and set its value to NULL.
+  - Once the node has a NULL value, check if its references are NULL. If they are, we can remove it, and repeat/work our way back up the trie.
 
 **Tries vs Hash Tables**
+- Hash tables use arrays combined with linked lists, whereas tries use arrays combined with pointers.
+- A trie doesn't need a **hash function**, because every path to an element will be unique.
+- However, a trie takes up a lot of memory/space with empty/NULL pointers.
 
-**How tries changes as they grow**
+**How Tries Changes As They Grow**
+- As a trie grows in single, less work must be done to add a value, since the "intermediate nodes", or the branches of the trie have already been built up.
+- Each time we add a word's letter, we need to look at 26 references, since there are only 26 possibilities/letters in the alphabet. This number never changes in the context of our trie, so it is a **constant value**.
 
-**Big O Notation of a trie structure**
+**Big O Notation of A Trie Structure**
+- The worst case runtime for **creating** a trie structure depends on how many words the trie contains, and how long they might potentially be. This is known as **O(mn)** time, where **m** is the longest word and **n** is the total number of words.
+- The time of **searching**, **inserting**, and **deleting** from a trie depends on the length of the word **a** and the total number of words: **O(an)**.
 
 **Commonly Asked Hashing Interview Questions**:
 1. *Find all words stored in a trie*
