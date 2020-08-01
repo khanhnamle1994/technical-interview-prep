@@ -234,6 +234,23 @@ while not q.Empty():
 
 [back to current section](#algorithms)
 
+### Graph Traversals
+
+- The process of **searching** through or **traversing** through a graph data structure involves visiting each vertex/node in a graph. The order in which vertices are visited is how we can classify graph traversals.
+- A Quick Review:
+  - **BFS** traverses broad into a structure by visiting sibling/neighbor nodes before children nodes. It uses a queue data structure.
+  - **DFS**: traverses deep into a structure by visiting children nodes before visiting sibling/neighbor nodes. It uses a stack data structure.
+- Graph traversal can begin with any node, since there is no concept of a root node.
+
+**BFS Traversal**
+- A unique thing about BFS is that it lends itself quite nicely to determining the **shortest path** between any node in the graph and the “parent” node.
+  - In fact, most BFS implementations will keep track of every single node’s “parent” nodes that come before it.
+  - This is helpful because we can use the pointers of the path that we take to get to a node from the starting node in order to determine a shortest path in the graph.
+- The power of using breadth-first search to traverse through a graph is that it can easily tell us the **shortest** way to get from one node to another.
+- If we must visit every node once, and check every edge in its adjacency list, the runtime complexity for both a directed and undirected graph is the sum of the vertices and their edges as represented by the graph in its adjacency list representation, or **O(V + E)**.
+
+[back to current section](#algorithms)
+
 ### Backtracking
 
 Learn about backtracking in [this video](https://www.youtube.com/watch?v=gBC_Fd8EE8A):
