@@ -621,13 +621,28 @@ def printAncestors(root, target):
 
 ### Graphs
 
-A graph is a set of nodes that are connected to each other in the form of a network. Nodes are also called vertices. A **pair(x,y)** is called an **edge**, which indicates that vertex **x** is connected to vertex **y**. An edge may contain weight/cost, showing how much cost is required to traverse from vertex x to y.
+A **graph** is a data structure that consists of a finite set of **vertices**, which are also called **nodes**, and a set of **edges**, which are references/links between the vertices. The edges of a graph are represented as ordered or unordered pairs, depending on whether or not the graph is **directed** or **undirected**.
 
 ![graph](https://github.com/khanhnamle1994/technical-interview-prep/blob/master/assets/graph.png)
 
-- Types of Graphs: Undirected Graph and Directed Graph
-- In a programming language, graphs can be represented using two forms: Adjacency Matrix and Adjacency List
-- Common Graph Traversing Algorithms: Breadth First Search and Depth First Search
+- There are two types of graphs:
+  - In an **undirected graph**, there is no order to the edges, since it's possible to travel from one vertex to the other.
+  - In a **directed graph**, there is a directional flow that's important to how the graph is structured, and therefore, the edge set is represented as ordered pairs.
+
+- An **edge list** is a list/array of all of the |E| edges in a graph. Edge lists are one of the simplest representations of a graph.
+  - It would take **O(E)** to find one particular edge.
+  - The space of representing an edge list is also going to be **O(E)**!
+
+- An **adjacency matrix** is a matrix that represents exactly which vertices/nodes in a graph have edges between them. The matrix serves as a lookup table, where a value of **1** represents an edge that exists, and **0** represents an edge that does not.
+  - They are easy to follow and represent. Looking up, inserting, and removing an edge can be done in **O(1)** (**constant** time).
+  - However, they can take up more space than necessary. An adjacency matrix always consumes **O(V^2)** amount of space.
+  - If a graph is **dense** and has many edges, this isn't too bad. But if a graph has few edges and is **sparse**, the matrix will be mostly filled with **0**'s, but take up lots of space!
+
+- An **adjacency list** is an array of linked lists that servers the purpose of representing a graph, but also makes it easy to see which other vertices are adjacent to other vertices. Each vertex in a graph can easily reference its neighbors through a **linked list**.
+  - Retrieving one vertex's possible neighbors takes **O(1)** time, sine we only need the vertex's index to get its list of adjacent neighbors.
+  - To find a specific edge **(x, y)**, we need to find vertex **x**'s adjacency list, which takes constant time, and look to see if **y** is in that list.
+  - In the worst case, this takes **O(d)** time, where **d** is the degree of vertex **v**.
+  - An adjacency list will require **|V|** amount of space for the list itself, as every vertex must be represented in the list.
 
 A graph can be easily presented using the python dictionary data types. We represent the vertices as the keys of the dictionary and the connection between the vertices also called edges as the values in the dictionary. Here are basic operations:
 * To **display graph vertices**, we simple find the keys of the graph dictionary. We use the keys() method.
