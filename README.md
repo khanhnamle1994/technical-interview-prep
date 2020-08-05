@@ -113,6 +113,7 @@ To practice your algorithmic coding, review [this interview preparation document
 Here are the algorithms:
 * [Sorting](#sorting)
 * [Tree Traversals](#tree-traversals)
+* [Graph Traversals](#graph-traversals)
 * [Backtracking](#backtracking)
 * [Binary Search](#binary-search)
 * [Breadth First Search](#breadth-first-search)
@@ -248,6 +249,26 @@ while not q.Empty():
   - This is helpful because we can use the pointers of the path that we take to get to a node from the starting node in order to determine a shortest path in the graph.
 - The power of using breadth-first search to traverse through a graph is that it can easily tell us the **shortest** way to get from one node to another.
 - If we must visit every node once, and check every edge in its adjacency list, the runtime complexity for both a directed and undirected graph is the sum of the vertices and their edges as represented by the graph in its adjacency list representation, or **O(V + E)**.
+
+**DFS Traversals**
+- While BFS will traverse through a graph one level of children at a time, DFS will traverse down a single path, one child node at a time.
+  - BFS is good to find a shortest path.
+  - DFS tells us if a path even exists.
+- DFS is like solving a maze:
+  - We'll continue to walk through the path of the maze until we reach a dead end.
+  - When we do reach a dead end, we backtrack until we find another path we haven't walked yet, and repeat.
+  - Eventually, we will be able to determine if we can get out of the maze.
+- DFS requires **O(V + E)** runtime:
+  - For a directed graph, |E| edges to check.
+  - For an undirected graph, 2|E| edges (each edge is visited twice).
+
+**Pros and Cons**
+- DFS:
+  - Not helpful in finding shortest paths. We could end up following the longest path from node x to y!
+  - But if the graph is deep enough, it can be great since we don't need to store the entire thing in memory!
+- BFS:
+  - Can be great to find the shortest path possible.
+  - But if the graph is wide, we'd need to store all of it, level by level, with references and using memory unnecessarily!
 
 [back to current section](#algorithms)
 
