@@ -1,3 +1,5 @@
+# Null terminating strings are not used in Python
+# For this question, assume you are passed a null terminated string
 def remove_duplicates(s):
 
     hash_set = set([])
@@ -13,8 +15,8 @@ def remove_duplicates(s):
         read_index += 1
 
     s[write_index] = '\0'
+    return s
 
 # Driver code
 string = 'abbabcddbabcdeedebc'
-remove_duplicates(string)
-print(string)
+print(remove_duplicates(string))
